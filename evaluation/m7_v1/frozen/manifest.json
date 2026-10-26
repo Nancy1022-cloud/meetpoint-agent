@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-10-26T17:40:10.833047+08:00",
+  "cases_sha256": "79af8ed69b9806826804e361efbbe86362590ef237f025f43af0d162b160aeb1",
+  "source_hashes": {
+    "app/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "app/amap_client.py": "fb6e7bdbe948957dfa58974c8efbf4a09e48c351a874548950ee84e3099dc0a6",
+    "app/config.py": "e85ee712518e82109c8dd6d6fa4938d192debcb92b5044bd8f8c1ccfc9f82273",
+    "app/errors.py": "b5f300090d9ae356f76728b732ed9ca9ee87443cbc48899c131cd7843bff9c83",
+    "app/m0.py": "47e5cadbf6245a58b1cc81159a8f4a2171bc74f4dffce9a56b155993061e827b",
+    "app/m1_api.py": "c7bdd00031052ce27e549e7b5643658c3b3cc79351df3c0204dd1030aecbc3b1",
+    "app/m1_models.py": "55c4d5e6d0997f3fca44d25cca98702f083db2cb63de43cf5bdab9b5a61e8a5c",
+    "app/m1_store.py": "95b1e72342f5ad63ed0fa181a99b54af50cbf3246ba60d2673ac82818e54de9a",
+    "app/m2.py": "64b0f2991941635da41aee1675309e1ed57dbd6bc9f57db65a106bc17675c8c8",
+    "app/m2_client.py": "9f518b7562d0f23bd394a3929b02311e09611c91a639102c8ad16fff82856dd4",
+    "app/m2_models.py": "0b8444fbf718e54d1560984224258d24ecb513aa12de5dbcb0fc9849f7aacd21",
+    "app/m2_parser.py": "c9af4f3009ca39f7536c80a42541a81a29d12a1b066248364ec16106029fa5a3",
+    "app/m2_tools.py": "9b91d71c8b6c4bc4976d97aedf8b6219f978ca3e397cc260ebae259afad46e8b",
+    "app/m3.py": "ba7d435d1f80ec446a1397f97b93b27ff02a8394229f55853c2c803a07344825",
+    "app/m3_baseline.py": "45e083299562d604766f4f1d5771f807f533bf8a1dcbb2c345250ff96faf3c02",
+    "app/m3_core.py": "cbbd8b635cf392e54e5a53dd88d0a29b0b33ca5709dd7ce6230c12ea3d5fa5de",
+    "app/m3_synthetic.py": "7effa80f561a6ea5ae4da167c11e93f149e1c0e925bb12dce77cc5d119e68bca",
+    "app/m4.py": "525544886e9fed8f12af75c9b0122273f3616c800c3896987c214b127a7c4141",
+    "app/m4_agent.py": "d2678cafd7f10a90c9e6175bdbd5b39054f48a06800267e07371b1c28183f9da",
+    "app/m4_decider.py": "74d784b0d1e751e0de2116957df52ce37806d309baa3d6d56bfaf1cb40257db6",
+    "app/m4_models.py": "07ea61b09c4aee661d64dfcdcce611cfb41920911b6ab8e95db4fcd353de2ef4",
+    "app/m4_synthetic.py": "a9a6c422b75be1fc8cb127505373f67ff946454f5c24ab70f0cf785b8ae2bf09",
+    "app/m5.py": "50a4e06e4d0081e4e70db57cd1fe090ba110046ecd3835143c46d972a7c70ff0",
+    "app/m5_api.py": "f337273d3f7c5b4f01f009ff18cdcf1e7f58b2ffbfbbd540f22bce5740f0dbd2",
+    "app/m5_checkpoint.py": "1d1f476ef1eb9772f88f00d670b49fab4d6ff32f42d9546b429623410d47ef20",
+    "app/m5_models.py": "149ac32fbc3705bc288c5a980b7f331c456c405a7de3591774f6b66ffc8e892b",
+    "app/m5_parse.py": "d292ae4effe1419f0d68b76d77be79027593db4e81629e7caf1be5509befc1b7",
+    "app/m5_store.py": "baa09111b5153a8d4554869953b82349386b2886ffe191c54bf8aa68d9ef7877",
+    "app/m6_api.py": "3713d1266c23f4f3734b8e08f2ac47363ba0e376034b9fe1089a093381db8aa7",
+    "app/m6_models.py": "ac82e4f30b7aa54d9fda2c90cb6023312bbaa8d0b7e4bea9c606cd348af1aa6d",
+    "app/m6_runtime.py": "80331e2a08aefa66efb64f0477fbdcc24c00fb117204cd6abe1a065240bd3b63",
+    "app/m7.py": "46c414ad6fbd5d74bb3aa805130da1027e4156e1fa70789daec382a9fbc814f4",
+    "app/m7_cases.py": "0ab0ebf2b1a12ab0d8602fba489fb5957469fc567bbd270efb89c8a06f7ef48d",
+    "app/m7_eval.py": "f376bdc0c9510efd3efd61df65bcb1f04617b6ef663a1111170c7e5b0b62a8dd",
+    "app/m7_memory.py": "64774a4ab9217f67e6ef3fb6d6ed94aaf4449634e4e1756e6e4cd98d85b310a7",
+    "app/m7_memory_llm.py": "f9b0f2ba8d76072d469ec0fe423230deb4dd0e0f3a613ad5904c29ae75b4d7fa",
+    "app/main.py": "91e556eb906340c3a25f502a372edccb6b198e03b0f962f92bd186d7c7f7b5e7",
+    "app/test_m2.py": "cc7b015b34ac3e0d5f6506a59bf96d13a6fb5c7b7f9b685875f49231ee36e4d8",
+    "app/test_m3.py": "e92d622901dff389e8c296c4b7a9c505478d019cd6da361706d969af35ecdc6d",
+    "app/test_m4.py": "9302062a34112f3c69610b8e61b125bb761b8dced4abe4f0b3cdd848d9409498",
+    "app/test_m5.py": "97e3814a898dec754a261be86e2753131344ec1c1ddd3b91cdf0fac62fdb5af5",
+    "app/test_m6.py": "f86877e54cbea82df3febb3fb12530282e8b3e2bffb8de705e8427f397a6720f",
+    "app/test_m7.py": "54275a607b8de3e4cdccf2183c9ce132451ae6b6dc1a9f4de44d45bf4322b104",
+    "requirements-m4-constraints.txt": "dc630b4e545e4289c24e81d05dda51b4207ec550133130a25f4ee304be0e34b8",
+    "requirements.txt": "20fe39dad83dca95005a340f215019916857280c08a1c03208e41f20ad7b7e10"
+  },
+  "model": {
+    "configured_model": "qwen3.8-27b",
+    "prompt_sha256": "bdc8eb3d0e5385049e30d903d52bfab25151f6d53d21941b4267e02b014a2464",
+    "memory_prompt_sha256": "a9e9a48b89e1a15cca0af728a90e4e23a825d706d9bf7d910ff3470180dd02fa",
+    "memory_context_token_cap": 2048,
+    "memory_parameters": {
+      "temperature": 0,
+      "max_tokens": 1024,
+      "enable_thinking": false,
+      "sdk_max_retries": 0,
+      "extra_retries_per_call": 0
+    },
+    "parameters": {
+      "temperature": 0,
+      "max_tokens": 512,
+      "enable_thinking": false,
+      "sdk_max_retries": 0,
+      "extra_retries_per_call": 1
+    }
+  },
+  "environment": {
+    "python": "3.12.15",
+    "packages": {
+      "pydantic": "2.11.5",
+      "langgraph": "1.0.5",
+      "openai": "1.109.1",
+      "langgraph-checkpoint-sqlite": "3.0.1"
+    }
+  },
+  "protocol": {
+    "B0_radii": [
+      1500,
+      3000,
+      5000
+    ],
+    "feasible_target": 3,
+    "recent_event_window": 3,
+    "b1_llm_repeats": [
+      2,
+      3
+    ]
+  },
+  "scope_note": "作者可见的预先登记合成集，非独立盲测；改规则后另立版本，不能隐藏旧结果。"
+}

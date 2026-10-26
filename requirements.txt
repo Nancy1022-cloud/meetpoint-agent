@@ -1,0 +1,11 @@
+fastapi==0.115.12
+uvicorn==0.34.2
+httpx==0.28.1
+openai==1.109.1
+pydantic==2.11.5
+pydantic-settings==2.9.1
+langgraph==1.0.5
+-c requirements-m4-constraints.txt
+langgraph-checkpoint-sqlite==3.0.1
+aiosqlite==0.22.1
+sqlite-vec==0.1.9

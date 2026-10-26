@@ -1,0 +1,10 @@
+name: meetpoint-agent
+services:
+  app:
+    build: .
+    env_file:
+      - .env
+    ports:
+      - "127.0.0.1:8001:8000"
+    volumes:
+      - ./app:/app/app:ro

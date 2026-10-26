@@ -1,0 +1,389 @@
+{
+  "source": "M6_ACCEPTANCE.md，2026-10-26 用户本机已确认的5次接入摘要",
+  "conditions_snapshot_available": false,
+  "strategy_comparison": false,
+  "input_notes": [
+    {
+      "id": "L01",
+      "origin_a_text": "五道口地铁站",
+      "origin_b_text": "国贸地铁站",
+      "constraints_source": "长期偏好或默认，完整生效数值未收集"
+    },
+    {
+      "id": "L02",
+      "origin_a_text": "西直门地铁站",
+      "origin_b_text": "望京西地铁站",
+      "constraints_source": "长期偏好或默认，完整生效数值未收集"
+    },
+    {
+      "id": "L03",
+      "origin_a_text": "北京南站",
+      "origin_b_text": "东直门地铁站",
+      "constraints_source": "长期偏好或默认，完整生效数值未收集"
+    },
+    {
+      "id": "L04",
+      "origin_a_text": "中关村地铁站",
+      "origin_b_text": "双井地铁站",
+      "constraints_source": "长期偏好或默认，完整生效数值未收集"
+    },
+    {
+      "id": "L05",
+      "origin_a_text": "清华大学",
+      "origin_b_text": "北京站",
+      "constraints_source": "长期偏好或默认，完整生效数值未收集"
+    }
+  ],
+  "observations": [
+    {
+      "record_type": "m6_online_integration",
+      "data_source": "amap_live",
+      "decision_source": "real_llm_when_needed",
+      "tested_at": "2026-10-26T13:38:38+08:00",
+      "code_version": "262d184907ee5e36",
+      "api_version": "v5",
+      "run_id": "202fe6bb13364103ba842ade4bc23b77",
+      "constraints_version": 1,
+      "departure_date": "2026-10-26",
+      "departure_time": "10:00",
+      "status": "completed",
+      "stop_reason": "budget_exhausted:search_rounds",
+      "outcome": "feasible_found",
+      "completed_plan": true,
+      "recommendations_count": 1,
+      "feasible_evaluated_count": 2,
+      "evaluated_count": 7,
+      "limits": {
+        "max_map_http": 40,
+        "max_llm_calls": 12,
+        "max_search_rounds": 3,
+        "max_candidates_per_round": 5
+      },
+      "counters": {
+        "map_http": 19,
+        "llm_calls": 2,
+        "search_rounds": 3,
+        "candidates_in_round": 2,
+        "candidates_total": 7
+      },
+      "real_map_http_attempts": 19,
+      "map_retries": 0,
+      "model": {
+        "configured_model": "qwen3.8-27b",
+        "returned_models": [
+          "qwen3.8-27b"
+        ],
+        "prompt_sha256": "bdc8eb3d0e5385049e30d903d52bfab25151f6d53d21941b4267e02b014a2464",
+        "parameters": {
+          "temperature": 0,
+          "max_tokens": 512,
+          "enable_thinking": false,
+          "sdk_max_retries": 0,
+          "extra_retries_per_call": 1
+        },
+        "real_llm_attempts": 2,
+        "llm_retries": 0,
+        "prompt_tokens_reported": 1882,
+        "completion_tokens_reported": 98,
+        "usage_coverage": {
+          "attempts": 2,
+          "responses_with_usage": 2
+        }
+      },
+      "elapsed_seconds_including_confirmation": 27.726,
+      "checkpoint_audit": {
+        "checkpoint_count": 11,
+        "persistent_field_boundary_passed": true,
+        "latest_control_state": {
+          "stop_reason": "budget_exhausted:search_rounds",
+          "run_id": "202fe6bb13364103ba842ade4bc23b77",
+          "action": "toward_a",
+          "completed_rounds": 3
+        },
+        "resume_policy": "read_confirmed_conditions_then_requery"
+      },
+      "error_code": null,
+      "note": "本次在线接入记录；不是策略评测，不包含地图候选、坐标或路线。"
+    },
+    {
+      "record_type": "m6_online_integration",
+      "data_source": "amap_live",
+      "decision_source": "real_llm_when_needed",
+      "tested_at": "2026-10-26T13:43:18+08:00",
+      "code_version": "262d184907ee5e36",
+      "api_version": "v5",
+      "run_id": "3e810f08331b40d49408820c102e8cc1",
+      "constraints_version": 4,
+      "departure_date": "2026-10-26",
+      "departure_time": "10:00",
+      "status": "completed",
+      "stop_reason": "feasible_target_reached",
+      "outcome": "feasible_found",
+      "completed_plan": true,
+      "recommendations_count": 3,
+      "feasible_evaluated_count": 3,
+      "evaluated_count": 6,
+      "limits": {
+        "max_map_http": 40,
+        "max_llm_calls": 12,
+        "max_search_rounds": 3,
+        "max_candidates_per_round": 5
+      },
+      "counters": {
+        "map_http": 16,
+        "llm_calls": 1,
+        "search_rounds": 2,
+        "candidates_in_round": 1,
+        "candidates_total": 6
+      },
+      "real_map_http_attempts": 16,
+      "map_retries": 0,
+      "model": {
+        "configured_model": "qwen3.8-27b",
+        "returned_models": [
+          "qwen3.8-27b"
+        ],
+        "prompt_sha256": "bdc8eb3d0e5385049e30d903d52bfab25151f6d53d21941b4267e02b014a2464",
+        "parameters": {
+          "temperature": 0,
+          "max_tokens": 512,
+          "enable_thinking": false,
+          "sdk_max_retries": 0,
+          "extra_retries_per_call": 1
+        },
+        "real_llm_attempts": 1,
+        "llm_retries": 0,
+        "prompt_tokens_reported": 960,
+        "completion_tokens_reported": 51,
+        "usage_coverage": {
+          "attempts": 1,
+          "responses_with_usage": 1
+        }
+      },
+      "elapsed_seconds_including_confirmation": 22.753,
+      "checkpoint_audit": {
+        "checkpoint_count": 8,
+        "persistent_field_boundary_passed": true,
+        "latest_control_state": {
+          "stop_reason": "feasible_target_reached",
+          "run_id": "3e810f08331b40d49408820c102e8cc1",
+          "action": "toward_a",
+          "completed_rounds": 2
+        },
+        "resume_policy": "read_confirmed_conditions_then_requery"
+      },
+      "error_code": null,
+      "note": "本次在线接入记录；不是策略评测，不包含地图候选、坐标或路线。"
+    },
+    {
+      "record_type": "m6_online_integration",
+      "data_source": "amap_live",
+      "decision_source": "real_llm_when_needed",
+      "tested_at": "2026-10-26T13:42:06+08:00",
+      "code_version": "262d184907ee5e36",
+      "api_version": "v5",
+      "run_id": "4285b9a11ca445729cb0066398f1d320",
+      "constraints_version": 3,
+      "departure_date": "2026-10-26",
+      "departure_time": "10:00",
+      "status": "completed",
+      "stop_reason": "agent_finished",
+      "outcome": "feasible_found",
+      "completed_plan": true,
+      "recommendations_count": 1,
+      "feasible_evaluated_count": 2,
+      "evaluated_count": 2,
+      "limits": {
+        "max_map_http": 40,
+        "max_llm_calls": 12,
+        "max_search_rounds": 3,
+        "max_candidates_per_round": 5
+      },
+      "counters": {
+        "map_http": 7,
+        "llm_calls": 1,
+        "search_rounds": 1,
+        "candidates_in_round": 2,
+        "candidates_total": 2
+      },
+      "real_map_http_attempts": 7,
+      "map_retries": 0,
+      "model": {
+        "configured_model": "qwen3.8-27b",
+        "returned_models": [
+          "qwen3.8-27b"
+        ],
+        "prompt_sha256": "bdc8eb3d0e5385049e30d903d52bfab25151f6d53d21941b4267e02b014a2464",
+        "parameters": {
+          "temperature": 0,
+          "max_tokens": 512,
+          "enable_thinking": false,
+          "sdk_max_retries": 0,
+          "extra_retries_per_call": 1
+        },
+        "real_llm_attempts": 1,
+        "llm_retries": 0,
+        "prompt_tokens_reported": 902,
+        "completion_tokens_reported": 49,
+        "usage_coverage": {
+          "attempts": 1,
+          "responses_with_usage": 1
+        }
+      },
+      "elapsed_seconds_including_confirmation": 26.542,
+      "checkpoint_audit": {
+        "checkpoint_count": 6,
+        "persistent_field_boundary_passed": true,
+        "latest_control_state": {
+          "stop_reason": "agent_finished",
+          "run_id": "4285b9a11ca445729cb0066398f1d320",
+          "action": "middle",
+          "completed_rounds": 1
+        },
+        "resume_policy": "read_confirmed_conditions_then_requery"
+      },
+      "error_code": null,
+      "note": "本次在线接入记录；不是策略评测，不包含地图候选、坐标或路线。"
+    },
+    {
+      "record_type": "m6_online_integration",
+      "data_source": "amap_live",
+      "decision_source": "real_llm_when_needed",
+      "tested_at": "2026-10-26T13:44:09+08:00",
+      "code_version": "262d184907ee5e36",
+      "api_version": "v5",
+      "run_id": "1f7e41fc484b46f19ed3a04f7961f3be",
+      "constraints_version": 5,
+      "departure_date": "2026-10-26",
+      "departure_time": "10:00",
+      "status": "completed",
+      "stop_reason": "agent_finished",
+      "outcome": "feasible_found",
+      "completed_plan": true,
+      "recommendations_count": 1,
+      "feasible_evaluated_count": 1,
+      "evaluated_count": 1,
+      "limits": {
+        "max_map_http": 40,
+        "max_llm_calls": 12,
+        "max_search_rounds": 3,
+        "max_candidates_per_round": 5
+      },
+      "counters": {
+        "map_http": 5,
+        "llm_calls": 1,
+        "search_rounds": 1,
+        "candidates_in_round": 1,
+        "candidates_total": 1
+      },
+      "real_map_http_attempts": 5,
+      "map_retries": 0,
+      "model": {
+        "configured_model": "qwen3.8-27b",
+        "returned_models": [
+          "qwen3.8-27b"
+        ],
+        "prompt_sha256": "bdc8eb3d0e5385049e30d903d52bfab25151f6d53d21941b4267e02b014a2464",
+        "parameters": {
+          "temperature": 0,
+          "max_tokens": 512,
+          "enable_thinking": false,
+          "sdk_max_retries": 0,
+          "extra_retries_per_call": 1
+        },
+        "real_llm_attempts": 1,
+        "llm_retries": 0,
+        "prompt_tokens_reported": 922,
+        "completion_tokens_reported": 49,
+        "usage_coverage": {
+          "attempts": 1,
+          "responses_with_usage": 1
+        }
+      },
+      "elapsed_seconds_including_confirmation": 20.489,
+      "checkpoint_audit": {
+        "checkpoint_count": 6,
+        "persistent_field_boundary_passed": true,
+        "latest_control_state": {
+          "stop_reason": "agent_finished",
+          "run_id": "1f7e41fc484b46f19ed3a04f7961f3be",
+          "action": "middle",
+          "completed_rounds": 1
+        },
+        "resume_policy": "read_confirmed_conditions_then_requery"
+      },
+      "error_code": null,
+      "note": "本次在线接入记录；不是策略评测，不包含地图候选、坐标或路线。"
+    },
+    {
+      "record_type": "m6_online_integration",
+      "data_source": "amap_live",
+      "decision_source": "real_llm_when_needed",
+      "tested_at": "2026-10-26T13:44:50+08:00",
+      "code_version": "262d184907ee5e36",
+      "api_version": "v5",
+      "run_id": "dcb0797600934cd591aeaadfcf9e1da6",
+      "constraints_version": 6,
+      "departure_date": "2026-10-26",
+      "departure_time": "10:00",
+      "status": "completed",
+      "stop_reason": "budget_exhausted:search_rounds",
+      "outcome": "constraints_unsatisfied",
+      "completed_plan": false,
+      "recommendations_count": 0,
+      "feasible_evaluated_count": 0,
+      "evaluated_count": 5,
+      "limits": {
+        "max_map_http": 40,
+        "max_llm_calls": 12,
+        "max_search_rounds": 3,
+        "max_candidates_per_round": 5
+      },
+      "counters": {
+        "map_http": 15,
+        "llm_calls": 2,
+        "search_rounds": 3,
+        "candidates_in_round": 1,
+        "candidates_total": 5
+      },
+      "real_map_http_attempts": 15,
+      "map_retries": 0,
+      "model": {
+        "configured_model": "qwen3.8-27b",
+        "returned_models": [
+          "qwen3.8-27b"
+        ],
+        "prompt_sha256": "bdc8eb3d0e5385049e30d903d52bfab25151f6d53d21941b4267e02b014a2464",
+        "parameters": {
+          "temperature": 0,
+          "max_tokens": 512,
+          "enable_thinking": false,
+          "sdk_max_retries": 0,
+          "extra_retries_per_call": 1
+        },
+        "real_llm_attempts": 2,
+        "llm_retries": 0,
+        "prompt_tokens_reported": 1915,
+        "completion_tokens_reported": 102,
+        "usage_coverage": {
+          "attempts": 2,
+          "responses_with_usage": 2
+        }
+      },
+      "elapsed_seconds_including_confirmation": 20.744,
+      "checkpoint_audit": {
+        "checkpoint_count": 11,
+        "persistent_field_boundary_passed": true,
+        "latest_control_state": {
+          "stop_reason": "budget_exhausted:search_rounds",
+          "run_id": "dcb0797600934cd591aeaadfcf9e1da6",
+          "action": "toward_b",
+          "completed_rounds": 3
+        },
+        "resume_policy": "read_confirmed_conditions_then_requery"
+      },
+      "error_code": null,
+      "note": "本次在线接入记录；不是策略评测，不包含地图候选、坐标或路线。"
+    }
+  ]
+}

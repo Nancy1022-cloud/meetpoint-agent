@@ -1,0 +1,2029 @@
+{
+  "record_type": "m7_memory_llm_control",
+  "data_source": "self_authored_synthetic_dialogues",
+  "real_map_http_attempts": 0,
+  "recent_n": 3,
+  "repeats": 2,
+  "context_token_cap": 2048,
+  "scope_note": "同样2048输入Token上限，用服务usage事后核验；缺usage或超限的样本保留，passed=false。同模型、提示、工具、输出上限；只改变上下文表示。无重试，逐重复保留。",
+  "summary": {
+    "structured": {
+      "passed": 16,
+      "total": 16,
+      "token_cap_verified": 16,
+      "api_or_output_errors": 0,
+      "prompt_tokens_reported": 18400,
+      "completion_tokens_reported": 2464,
+      "real_llm_attempts": 16,
+      "elapsed_total_seconds": 55.99375
+    },
+    "recent_events": {
+      "passed": 8,
+      "total": 16,
+      "token_cap_verified": 16,
+      "api_or_output_errors": 2,
+      "prompt_tokens_reported": 17280,
+      "completion_tokens_reported": 2468,
+      "real_llm_attempts": 16,
+      "elapsed_total_seconds": 66.906297
+    }
+  },
+  "rows": [
+    {
+      "case_id": "R01",
+      "policy": "structured",
+      "repeat": 1,
+      "configured_model": "qwen3.8-27b",
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 3600,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1000,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "context_token_cap": 2048,
+      "real_llm_attempts": 1,
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 1024,
+        "enable_thinking": false,
+        "sdk_max_retries": 0,
+        "extra_retries_per_call": 0
+      },
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 3600,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1000,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "matches_expected": true,
+      "passed": true,
+      "input_token_cap_verified": true,
+      "prompt_tokens_reported": 1147,
+      "completion_tokens_reported": 151,
+      "returned_model": "qwen3.8-27b",
+      "error_code": null,
+      "elapsed_seconds": 9.77049,
+      "fee": {
+        "reported_usage_price_estimate": null,
+        "complete_usage": true,
+        "note": "按用户给定每百万Token单价计算；不是账单。缺usage时仅覆盖已报告部分；未知不填0。"
+      }
+    },
+    {
+      "case_id": "R01",
+      "policy": "recent_events",
+      "repeat": 1,
+      "configured_model": "qwen3.8-27b",
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 3600,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1000,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "context_token_cap": 2048,
+      "real_llm_attempts": 1,
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 1024,
+        "enable_thinking": false,
+        "sdk_max_retries": 0,
+        "extra_retries_per_call": 0
+      },
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1000,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "matches_expected": false,
+      "passed": false,
+      "input_token_cap_verified": true,
+      "prompt_tokens_reported": 1069,
+      "completion_tokens_reported": 151,
+      "returned_model": "qwen3.8-27b",
+      "error_code": null,
+      "elapsed_seconds": 2.58606,
+      "fee": {
+        "reported_usage_price_estimate": null,
+        "complete_usage": true,
+        "note": "按用户给定每百万Token单价计算；不是账单。缺usage时仅覆盖已报告部分；未知不填0。"
+      }
+    },
+    {
+      "case_id": "R01",
+      "policy": "recent_events",
+      "repeat": 2,
+      "configured_model": "qwen3.8-27b",
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 3600,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1000,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "context_token_cap": 2048,
+      "real_llm_attempts": 1,
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 1024,
+        "enable_thinking": false,
+        "sdk_max_retries": 0,
+        "extra_retries_per_call": 0
+      },
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1000,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "matches_expected": false,
+      "passed": false,
+      "input_token_cap_verified": true,
+      "prompt_tokens_reported": 1069,
+      "completion_tokens_reported": 151,
+      "returned_model": "qwen3.8-27b",
+      "error_code": null,
+      "elapsed_seconds": 13.702777,
+      "fee": {
+        "reported_usage_price_estimate": null,
+        "complete_usage": true,
+        "note": "按用户给定每百万Token单价计算；不是账单。缺usage时仅覆盖已报告部分；未知不填0。"
+      }
+    },
+    {
+      "case_id": "R01",
+      "policy": "structured",
+      "repeat": 2,
+      "configured_model": "qwen3.8-27b",
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 3600,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1000,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "context_token_cap": 2048,
+      "real_llm_attempts": 1,
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 1024,
+        "enable_thinking": false,
+        "sdk_max_retries": 0,
+        "extra_retries_per_call": 0
+      },
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 3600,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1000,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "matches_expected": true,
+      "passed": true,
+      "input_token_cap_verified": true,
+      "prompt_tokens_reported": 1147,
+      "completion_tokens_reported": 151,
+      "returned_model": "qwen3.8-27b",
+      "error_code": null,
+      "elapsed_seconds": 2.596733,
+      "fee": {
+        "reported_usage_price_estimate": null,
+        "complete_usage": true,
+        "note": "按用户给定每百万Token单价计算；不是账单。缺usage时仅覆盖已报告部分；未知不填0。"
+      }
+    },
+    {
+      "case_id": "R02",
+      "policy": "recent_events",
+      "repeat": 1,
+      "configured_model": "qwen3.8-27b",
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 3600,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2400,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1000,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "context_token_cap": 2048,
+      "real_llm_attempts": 1,
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 1024,
+        "enable_thinking": false,
+        "sdk_max_retries": 0,
+        "extra_retries_per_call": 0
+      },
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 3600,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "matches_expected": false,
+      "passed": false,
+      "input_token_cap_verified": true,
+      "prompt_tokens_reported": 1068,
+      "completion_tokens_reported": 151,
+      "returned_model": "qwen3.8-27b",
+      "error_code": null,
+      "elapsed_seconds": 3.017943,
+      "fee": {
+        "reported_usage_price_estimate": null,
+        "complete_usage": true,
+        "note": "按用户给定每百万Token单价计算；不是账单。缺usage时仅覆盖已报告部分；未知不填0。"
+      }
+    },
+    {
+      "case_id": "R02",
+      "policy": "structured",
+      "repeat": 1,
+      "configured_model": "qwen3.8-27b",
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 3600,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2400,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1000,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "context_token_cap": 2048,
+      "real_llm_attempts": 1,
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 1024,
+        "enable_thinking": false,
+        "sdk_max_retries": 0,
+        "extra_retries_per_call": 0
+      },
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 3600,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2400,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1000,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "matches_expected": true,
+      "passed": true,
+      "input_token_cap_verified": true,
+      "prompt_tokens_reported": 1147,
+      "completion_tokens_reported": 151,
+      "returned_model": "qwen3.8-27b",
+      "error_code": null,
+      "elapsed_seconds": 6.738778,
+      "fee": {
+        "reported_usage_price_estimate": null,
+        "complete_usage": true,
+        "note": "按用户给定每百万Token单价计算；不是账单。缺usage时仅覆盖已报告部分；未知不填0。"
+      }
+    },
+    {
+      "case_id": "R02",
+      "policy": "structured",
+      "repeat": 2,
+      "configured_model": "qwen3.8-27b",
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 3600,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2400,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1000,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "context_token_cap": 2048,
+      "real_llm_attempts": 1,
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 1024,
+        "enable_thinking": false,
+        "sdk_max_retries": 0,
+        "extra_retries_per_call": 0
+      },
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 3600,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2400,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1000,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "matches_expected": true,
+      "passed": true,
+      "input_token_cap_verified": true,
+      "prompt_tokens_reported": 1147,
+      "completion_tokens_reported": 151,
+      "returned_model": "qwen3.8-27b",
+      "error_code": null,
+      "elapsed_seconds": 2.615214,
+      "fee": {
+        "reported_usage_price_estimate": null,
+        "complete_usage": true,
+        "note": "按用户给定每百万Token单价计算；不是账单。缺usage时仅覆盖已报告部分；未知不填0。"
+      }
+    },
+    {
+      "case_id": "R02",
+      "policy": "recent_events",
+      "repeat": 2,
+      "configured_model": "qwen3.8-27b",
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 3600,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2400,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1000,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "context_token_cap": 2048,
+      "real_llm_attempts": 1,
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 1024,
+        "enable_thinking": false,
+        "sdk_max_retries": 0,
+        "extra_retries_per_call": 0
+      },
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 3600,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "matches_expected": false,
+      "passed": false,
+      "input_token_cap_verified": true,
+      "prompt_tokens_reported": 1068,
+      "completion_tokens_reported": 151,
+      "returned_model": "qwen3.8-27b",
+      "error_code": null,
+      "elapsed_seconds": 5.579613,
+      "fee": {
+        "reported_usage_price_estimate": null,
+        "complete_usage": true,
+        "note": "按用户给定每百万Token单价计算；不是账单。缺usage时仅覆盖已报告部分；未知不填0。"
+      }
+    },
+    {
+      "case_id": "R03",
+      "policy": "structured",
+      "repeat": 1,
+      "configured_model": "qwen3.8-27b",
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 2,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {
+          "max_transfers": 0
+        },
+        "pending": false
+      },
+      "context_token_cap": 2048,
+      "real_llm_attempts": 1,
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 1024,
+        "enable_thinking": false,
+        "sdk_max_retries": 0,
+        "extra_retries_per_call": 0
+      },
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 2,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {
+          "max_transfers": 0
+        },
+        "pending": false
+      },
+      "matches_expected": true,
+      "passed": true,
+      "input_token_cap_verified": true,
+      "prompt_tokens_reported": 1154,
+      "completion_tokens_reported": 158,
+      "returned_model": "qwen3.8-27b",
+      "error_code": null,
+      "elapsed_seconds": 2.519641,
+      "fee": {
+        "reported_usage_price_estimate": null,
+        "complete_usage": true,
+        "note": "按用户给定每百万Token单价计算；不是账单。缺usage时仅覆盖已报告部分；未知不填0。"
+      }
+    },
+    {
+      "case_id": "R03",
+      "policy": "recent_events",
+      "repeat": 1,
+      "configured_model": "qwen3.8-27b",
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 2,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {
+          "max_transfers": 0
+        },
+        "pending": false
+      },
+      "context_token_cap": 2048,
+      "real_llm_attempts": 1,
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 1024,
+        "enable_thinking": false,
+        "sdk_max_retries": 0,
+        "extra_retries_per_call": 0
+      },
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 2,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {
+          "max_transfers": 0
+        },
+        "pending": false
+      },
+      "matches_expected": true,
+      "passed": true,
+      "input_token_cap_verified": true,
+      "prompt_tokens_reported": 1086,
+      "completion_tokens_reported": 158,
+      "returned_model": "qwen3.8-27b",
+      "error_code": null,
+      "elapsed_seconds": 2.567082,
+      "fee": {
+        "reported_usage_price_estimate": null,
+        "complete_usage": true,
+        "note": "按用户给定每百万Token单价计算；不是账单。缺usage时仅覆盖已报告部分；未知不填0。"
+      }
+    },
+    {
+      "case_id": "R03",
+      "policy": "recent_events",
+      "repeat": 2,
+      "configured_model": "qwen3.8-27b",
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 2,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {
+          "max_transfers": 0
+        },
+        "pending": false
+      },
+      "context_token_cap": 2048,
+      "real_llm_attempts": 1,
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 1024,
+        "enable_thinking": false,
+        "sdk_max_retries": 0,
+        "extra_retries_per_call": 0
+      },
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 2,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {
+          "max_transfers": 0
+        },
+        "pending": false
+      },
+      "matches_expected": true,
+      "passed": true,
+      "input_token_cap_verified": true,
+      "prompt_tokens_reported": 1086,
+      "completion_tokens_reported": 158,
+      "returned_model": "qwen3.8-27b",
+      "error_code": null,
+      "elapsed_seconds": 2.951835,
+      "fee": {
+        "reported_usage_price_estimate": null,
+        "complete_usage": true,
+        "note": "按用户给定每百万Token单价计算；不是账单。缺usage时仅覆盖已报告部分；未知不填0。"
+      }
+    },
+    {
+      "case_id": "R03",
+      "policy": "structured",
+      "repeat": 2,
+      "configured_model": "qwen3.8-27b",
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 2,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {
+          "max_transfers": 0
+        },
+        "pending": false
+      },
+      "context_token_cap": 2048,
+      "real_llm_attempts": 1,
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 1024,
+        "enable_thinking": false,
+        "sdk_max_retries": 0,
+        "extra_retries_per_call": 0
+      },
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 2,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {
+          "max_transfers": 0
+        },
+        "pending": false
+      },
+      "matches_expected": true,
+      "passed": true,
+      "input_token_cap_verified": true,
+      "prompt_tokens_reported": 1154,
+      "completion_tokens_reported": 158,
+      "returned_model": "qwen3.8-27b",
+      "error_code": null,
+      "elapsed_seconds": 2.536791,
+      "fee": {
+        "reported_usage_price_estimate": null,
+        "complete_usage": true,
+        "note": "按用户给定每百万Token单价计算；不是账单。缺usage时仅覆盖已报告部分；未知不填0。"
+      }
+    },
+    {
+      "case_id": "R04",
+      "policy": "recent_events",
+      "repeat": 1,
+      "configured_model": "qwen3.8-27b",
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 0,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {
+          "max_transfers": 0
+        },
+        "pending": false
+      },
+      "context_token_cap": 2048,
+      "real_llm_attempts": 1,
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 1024,
+        "enable_thinking": false,
+        "sdk_max_retries": 0,
+        "extra_retries_per_call": 0
+      },
+      "actual": null,
+      "matches_expected": false,
+      "passed": false,
+      "input_token_cap_verified": true,
+      "prompt_tokens_reported": 1099,
+      "completion_tokens_reported": 160,
+      "returned_model": "qwen3.8-27b",
+      "error_code": "invalid_memory_output",
+      "elapsed_seconds": 2.63519,
+      "fee": {
+        "reported_usage_price_estimate": null,
+        "complete_usage": true,
+        "note": "按用户给定每百万Token单价计算；不是账单。缺usage时仅覆盖已报告部分；未知不填0。"
+      }
+    },
+    {
+      "case_id": "R04",
+      "policy": "structured",
+      "repeat": 1,
+      "configured_model": "qwen3.8-27b",
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 0,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {
+          "max_transfers": 0
+        },
+        "pending": false
+      },
+      "context_token_cap": 2048,
+      "real_llm_attempts": 1,
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 1024,
+        "enable_thinking": false,
+        "sdk_max_retries": 0,
+        "extra_retries_per_call": 0
+      },
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 0,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {
+          "max_transfers": 0
+        },
+        "pending": false
+      },
+      "matches_expected": true,
+      "passed": true,
+      "input_token_cap_verified": true,
+      "prompt_tokens_reported": 1154,
+      "completion_tokens_reported": 158,
+      "returned_model": "qwen3.8-27b",
+      "error_code": null,
+      "elapsed_seconds": 2.588971,
+      "fee": {
+        "reported_usage_price_estimate": null,
+        "complete_usage": true,
+        "note": "按用户给定每百万Token单价计算；不是账单。缺usage时仅覆盖已报告部分；未知不填0。"
+      }
+    },
+    {
+      "case_id": "R04",
+      "policy": "structured",
+      "repeat": 2,
+      "configured_model": "qwen3.8-27b",
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 0,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {
+          "max_transfers": 0
+        },
+        "pending": false
+      },
+      "context_token_cap": 2048,
+      "real_llm_attempts": 1,
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 1024,
+        "enable_thinking": false,
+        "sdk_max_retries": 0,
+        "extra_retries_per_call": 0
+      },
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 0,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {
+          "max_transfers": 0
+        },
+        "pending": false
+      },
+      "matches_expected": true,
+      "passed": true,
+      "input_token_cap_verified": true,
+      "prompt_tokens_reported": 1154,
+      "completion_tokens_reported": 158,
+      "returned_model": "qwen3.8-27b",
+      "error_code": null,
+      "elapsed_seconds": 3.329423,
+      "fee": {
+        "reported_usage_price_estimate": null,
+        "complete_usage": true,
+        "note": "按用户给定每百万Token单价计算；不是账单。缺usage时仅覆盖已报告部分；未知不填0。"
+      }
+    },
+    {
+      "case_id": "R04",
+      "policy": "recent_events",
+      "repeat": 2,
+      "configured_model": "qwen3.8-27b",
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 0,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {
+          "max_transfers": 0
+        },
+        "pending": false
+      },
+      "context_token_cap": 2048,
+      "real_llm_attempts": 1,
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 1024,
+        "enable_thinking": false,
+        "sdk_max_retries": 0,
+        "extra_retries_per_call": 0
+      },
+      "actual": null,
+      "matches_expected": false,
+      "passed": false,
+      "input_token_cap_verified": true,
+      "prompt_tokens_reported": 1099,
+      "completion_tokens_reported": 160,
+      "returned_model": "qwen3.8-27b",
+      "error_code": "invalid_memory_output",
+      "elapsed_seconds": 4.682014,
+      "fee": {
+        "reported_usage_price_estimate": null,
+        "complete_usage": true,
+        "note": "按用户给定每百万Token单价计算；不是账单。缺usage时仅覆盖已报告部分；未知不填0。"
+      }
+    },
+    {
+      "case_id": "R05",
+      "policy": "structured",
+      "repeat": 1,
+      "configured_model": "qwen3.8-27b",
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {
+          "max_duration_seconds": 3600
+        },
+        "pending": false
+      },
+      "context_token_cap": 2048,
+      "real_llm_attempts": 1,
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 1024,
+        "enable_thinking": false,
+        "sdk_max_retries": 0,
+        "extra_retries_per_call": 0
+      },
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {
+          "max_duration_seconds": 3600
+        },
+        "pending": false
+      },
+      "matches_expected": true,
+      "passed": true,
+      "input_token_cap_verified": true,
+      "prompt_tokens_reported": 1157,
+      "completion_tokens_reported": 161,
+      "returned_model": "qwen3.8-27b",
+      "error_code": null,
+      "elapsed_seconds": 3.398144,
+      "fee": {
+        "reported_usage_price_estimate": null,
+        "complete_usage": true,
+        "note": "按用户给定每百万Token单价计算；不是账单。缺usage时仅覆盖已报告部分；未知不填0。"
+      }
+    },
+    {
+      "case_id": "R05",
+      "policy": "recent_events",
+      "repeat": 1,
+      "configured_model": "qwen3.8-27b",
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {
+          "max_duration_seconds": 3600
+        },
+        "pending": false
+      },
+      "context_token_cap": 2048,
+      "real_llm_attempts": 1,
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 1024,
+        "enable_thinking": false,
+        "sdk_max_retries": 0,
+        "extra_retries_per_call": 0
+      },
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {
+          "max_duration_seconds": 3600
+        },
+        "pending": false
+      },
+      "matches_expected": true,
+      "passed": true,
+      "input_token_cap_verified": true,
+      "prompt_tokens_reported": 1082,
+      "completion_tokens_reported": 161,
+      "returned_model": "qwen3.8-27b",
+      "error_code": null,
+      "elapsed_seconds": 2.63625,
+      "fee": {
+        "reported_usage_price_estimate": null,
+        "complete_usage": true,
+        "note": "按用户给定每百万Token单价计算；不是账单。缺usage时仅覆盖已报告部分；未知不填0。"
+      }
+    },
+    {
+      "case_id": "R05",
+      "policy": "recent_events",
+      "repeat": 2,
+      "configured_model": "qwen3.8-27b",
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {
+          "max_duration_seconds": 3600
+        },
+        "pending": false
+      },
+      "context_token_cap": 2048,
+      "real_llm_attempts": 1,
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 1024,
+        "enable_thinking": false,
+        "sdk_max_retries": 0,
+        "extra_retries_per_call": 0
+      },
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {
+          "max_duration_seconds": 3600
+        },
+        "pending": false
+      },
+      "matches_expected": true,
+      "passed": true,
+      "input_token_cap_verified": true,
+      "prompt_tokens_reported": 1082,
+      "completion_tokens_reported": 161,
+      "returned_model": "qwen3.8-27b",
+      "error_code": null,
+      "elapsed_seconds": 5.007003,
+      "fee": {
+        "reported_usage_price_estimate": null,
+        "complete_usage": true,
+        "note": "按用户给定每百万Token单价计算；不是账单。缺usage时仅覆盖已报告部分；未知不填0。"
+      }
+    },
+    {
+      "case_id": "R05",
+      "policy": "structured",
+      "repeat": 2,
+      "configured_model": "qwen3.8-27b",
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {
+          "max_duration_seconds": 3600
+        },
+        "pending": false
+      },
+      "context_token_cap": 2048,
+      "real_llm_attempts": 1,
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 1024,
+        "enable_thinking": false,
+        "sdk_max_retries": 0,
+        "extra_retries_per_call": 0
+      },
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {
+          "max_duration_seconds": 3600
+        },
+        "pending": false
+      },
+      "matches_expected": true,
+      "passed": true,
+      "input_token_cap_verified": true,
+      "prompt_tokens_reported": 1157,
+      "completion_tokens_reported": 161,
+      "returned_model": "qwen3.8-27b",
+      "error_code": null,
+      "elapsed_seconds": 2.750531,
+      "fee": {
+        "reported_usage_price_estimate": null,
+        "complete_usage": true,
+        "note": "按用户给定每百万Token单价计算；不是账单。缺usage时仅覆盖已报告部分；未知不填0。"
+      }
+    },
+    {
+      "case_id": "R06",
+      "policy": "recent_events",
+      "repeat": 1,
+      "configured_model": "qwen3.8-27b",
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": true
+      },
+      "context_token_cap": 2048,
+      "real_llm_attempts": 1,
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 1024,
+        "enable_thinking": false,
+        "sdk_max_retries": 0,
+        "extra_retries_per_call": 0
+      },
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": true
+      },
+      "matches_expected": true,
+      "passed": true,
+      "input_token_cap_verified": true,
+      "prompt_tokens_reported": 1069,
+      "completion_tokens_reported": 151,
+      "returned_model": "qwen3.8-27b",
+      "error_code": null,
+      "elapsed_seconds": 2.640253,
+      "fee": {
+        "reported_usage_price_estimate": null,
+        "complete_usage": true,
+        "note": "按用户给定每百万Token单价计算；不是账单。缺usage时仅覆盖已报告部分；未知不填0。"
+      }
+    },
+    {
+      "case_id": "R06",
+      "policy": "structured",
+      "repeat": 1,
+      "configured_model": "qwen3.8-27b",
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": true
+      },
+      "context_token_cap": 2048,
+      "real_llm_attempts": 1,
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 1024,
+        "enable_thinking": false,
+        "sdk_max_retries": 0,
+        "extra_retries_per_call": 0
+      },
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": true
+      },
+      "matches_expected": true,
+      "passed": true,
+      "input_token_cap_verified": true,
+      "prompt_tokens_reported": 1147,
+      "completion_tokens_reported": 151,
+      "returned_model": "qwen3.8-27b",
+      "error_code": null,
+      "elapsed_seconds": 2.550643,
+      "fee": {
+        "reported_usage_price_estimate": null,
+        "complete_usage": true,
+        "note": "按用户给定每百万Token单价计算；不是账单。缺usage时仅覆盖已报告部分；未知不填0。"
+      }
+    },
+    {
+      "case_id": "R06",
+      "policy": "structured",
+      "repeat": 2,
+      "configured_model": "qwen3.8-27b",
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": true
+      },
+      "context_token_cap": 2048,
+      "real_llm_attempts": 1,
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 1024,
+        "enable_thinking": false,
+        "sdk_max_retries": 0,
+        "extra_retries_per_call": 0
+      },
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": true
+      },
+      "matches_expected": true,
+      "passed": true,
+      "input_token_cap_verified": true,
+      "prompt_tokens_reported": 1147,
+      "completion_tokens_reported": 151,
+      "returned_model": "qwen3.8-27b",
+      "error_code": null,
+      "elapsed_seconds": 2.522631,
+      "fee": {
+        "reported_usage_price_estimate": null,
+        "complete_usage": true,
+        "note": "按用户给定每百万Token单价计算；不是账单。缺usage时仅覆盖已报告部分；未知不填0。"
+      }
+    },
+    {
+      "case_id": "R06",
+      "policy": "recent_events",
+      "repeat": 2,
+      "configured_model": "qwen3.8-27b",
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": true
+      },
+      "context_token_cap": 2048,
+      "real_llm_attempts": 1,
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 1024,
+        "enable_thinking": false,
+        "sdk_max_retries": 0,
+        "extra_retries_per_call": 0
+      },
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": true
+      },
+      "matches_expected": true,
+      "passed": true,
+      "input_token_cap_verified": true,
+      "prompt_tokens_reported": 1069,
+      "completion_tokens_reported": 151,
+      "returned_model": "qwen3.8-27b",
+      "error_code": null,
+      "elapsed_seconds": 2.474478,
+      "fee": {
+        "reported_usage_price_estimate": null,
+        "complete_usage": true,
+        "note": "按用户给定每百万Token单价计算；不是账单。缺usage时仅覆盖已报告部分；未知不填0。"
+      }
+    },
+    {
+      "case_id": "R07",
+      "policy": "structured",
+      "repeat": 1,
+      "configured_model": "qwen3.8-27b",
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "context_token_cap": 2048,
+      "real_llm_attempts": 1,
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 1024,
+        "enable_thinking": false,
+        "sdk_max_retries": 0,
+        "extra_retries_per_call": 0
+      },
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "matches_expected": true,
+      "passed": true,
+      "input_token_cap_verified": true,
+      "prompt_tokens_reported": 1147,
+      "completion_tokens_reported": 151,
+      "returned_model": "qwen3.8-27b",
+      "error_code": null,
+      "elapsed_seconds": 2.558157,
+      "fee": {
+        "reported_usage_price_estimate": null,
+        "complete_usage": true,
+        "note": "按用户给定每百万Token单价计算；不是账单。缺usage时仅覆盖已报告部分；未知不填0。"
+      }
+    },
+    {
+      "case_id": "R07",
+      "policy": "recent_events",
+      "repeat": 1,
+      "configured_model": "qwen3.8-27b",
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "context_token_cap": 2048,
+      "real_llm_attempts": 1,
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 1024,
+        "enable_thinking": false,
+        "sdk_max_retries": 0,
+        "extra_retries_per_call": 0
+      },
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "matches_expected": true,
+      "passed": true,
+      "input_token_cap_verified": true,
+      "prompt_tokens_reported": 1098,
+      "completion_tokens_reported": 151,
+      "returned_model": "qwen3.8-27b",
+      "error_code": null,
+      "elapsed_seconds": 8.792761,
+      "fee": {
+        "reported_usage_price_estimate": null,
+        "complete_usage": true,
+        "note": "按用户给定每百万Token单价计算；不是账单。缺usage时仅覆盖已报告部分；未知不填0。"
+      }
+    },
+    {
+      "case_id": "R07",
+      "policy": "recent_events",
+      "repeat": 2,
+      "configured_model": "qwen3.8-27b",
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "context_token_cap": 2048,
+      "real_llm_attempts": 1,
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 1024,
+        "enable_thinking": false,
+        "sdk_max_retries": 0,
+        "extra_retries_per_call": 0
+      },
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "matches_expected": true,
+      "passed": true,
+      "input_token_cap_verified": true,
+      "prompt_tokens_reported": 1098,
+      "completion_tokens_reported": 151,
+      "returned_model": "qwen3.8-27b",
+      "error_code": null,
+      "elapsed_seconds": 2.576619,
+      "fee": {
+        "reported_usage_price_estimate": null,
+        "complete_usage": true,
+        "note": "按用户给定每百万Token单价计算；不是账单。缺usage时仅覆盖已报告部分；未知不填0。"
+      }
+    },
+    {
+      "case_id": "R07",
+      "policy": "structured",
+      "repeat": 2,
+      "configured_model": "qwen3.8-27b",
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "context_token_cap": 2048,
+      "real_llm_attempts": 1,
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 1024,
+        "enable_thinking": false,
+        "sdk_max_retries": 0,
+        "extra_retries_per_call": 0
+      },
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "matches_expected": true,
+      "passed": true,
+      "input_token_cap_verified": true,
+      "prompt_tokens_reported": 1147,
+      "completion_tokens_reported": 151,
+      "returned_model": "qwen3.8-27b",
+      "error_code": null,
+      "elapsed_seconds": 2.534904,
+      "fee": {
+        "reported_usage_price_estimate": null,
+        "complete_usage": true,
+        "note": "按用户给定每百万Token单价计算；不是账单。缺usage时仅覆盖已报告部分；未知不填0。"
+      }
+    },
+    {
+      "case_id": "R08",
+      "policy": "recent_events",
+      "repeat": 1,
+      "configured_model": "qwen3.8-27b",
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点C",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1000,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "context_token_cap": 2048,
+      "real_llm_attempts": 1,
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 1024,
+        "enable_thinking": false,
+        "sdk_max_retries": 0,
+        "extra_retries_per_call": 0
+      },
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1000,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "matches_expected": false,
+      "passed": false,
+      "input_token_cap_verified": true,
+      "prompt_tokens_reported": 1069,
+      "completion_tokens_reported": 151,
+      "returned_model": "qwen3.8-27b",
+      "error_code": null,
+      "elapsed_seconds": 2.444617,
+      "fee": {
+        "reported_usage_price_estimate": null,
+        "complete_usage": true,
+        "note": "按用户给定每百万Token单价计算；不是账单。缺usage时仅覆盖已报告部分；未知不填0。"
+      }
+    },
+    {
+      "case_id": "R08",
+      "policy": "structured",
+      "repeat": 1,
+      "configured_model": "qwen3.8-27b",
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点C",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1000,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "context_token_cap": 2048,
+      "real_llm_attempts": 1,
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 1024,
+        "enable_thinking": false,
+        "sdk_max_retries": 0,
+        "extra_retries_per_call": 0
+      },
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点C",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1000,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "matches_expected": true,
+      "passed": true,
+      "input_token_cap_verified": true,
+      "prompt_tokens_reported": 1147,
+      "completion_tokens_reported": 151,
+      "returned_model": "qwen3.8-27b",
+      "error_code": null,
+      "elapsed_seconds": 2.561714,
+      "fee": {
+        "reported_usage_price_estimate": null,
+        "complete_usage": true,
+        "note": "按用户给定每百万Token单价计算；不是账单。缺usage时仅覆盖已报告部分；未知不填0。"
+      }
+    },
+    {
+      "case_id": "R08",
+      "policy": "structured",
+      "repeat": 2,
+      "configured_model": "qwen3.8-27b",
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点C",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1000,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "context_token_cap": 2048,
+      "real_llm_attempts": 1,
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 1024,
+        "enable_thinking": false,
+        "sdk_max_retries": 0,
+        "extra_retries_per_call": 0
+      },
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点C",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1000,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "matches_expected": true,
+      "passed": true,
+      "input_token_cap_verified": true,
+      "prompt_tokens_reported": 1147,
+      "completion_tokens_reported": 151,
+      "returned_model": "qwen3.8-27b",
+      "error_code": null,
+      "elapsed_seconds": 4.420985,
+      "fee": {
+        "reported_usage_price_estimate": null,
+        "complete_usage": true,
+        "note": "按用户给定每百万Token单价计算；不是账单。缺usage时仅覆盖已报告部分；未知不填0。"
+      }
+    },
+    {
+      "case_id": "R08",
+      "policy": "recent_events",
+      "repeat": 2,
+      "configured_model": "qwen3.8-27b",
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点C",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1000,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "context_token_cap": 2048,
+      "real_llm_attempts": 1,
+      "parameters": {
+        "temperature": 0,
+        "max_tokens": 1024,
+        "enable_thinking": false,
+        "sdk_max_retries": 0,
+        "extra_retries_per_call": 0
+      },
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1000,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "matches_expected": false,
+      "passed": false,
+      "input_token_cap_verified": true,
+      "prompt_tokens_reported": 1069,
+      "completion_tokens_reported": 151,
+      "returned_model": "qwen3.8-27b",
+      "error_code": null,
+      "elapsed_seconds": 2.611802,
+      "fee": {
+        "reported_usage_price_estimate": null,
+        "complete_usage": true,
+        "note": "按用户给定每百万Token单价计算；不是账单。缺usage时仅覆盖已报告部分；未知不填0。"
+      }
+    }
+  ]
+}

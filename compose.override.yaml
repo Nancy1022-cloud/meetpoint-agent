@@ -1,0 +1,6 @@
+services:
+  app:
+    environment:
+      MEETPOINT_DB_PATH: /app/data/meetpoint.sqlite3
+    volumes:
+      - ./data:/app/data

@@ -1,0 +1,708 @@
+{
+  "record_type": "m7_memory_state_control",
+  "recent_n": 3,
+  "same_parser": "app.m5_parse.parse_message",
+  "real_map_http_attempts": 0,
+  "real_llm_attempts": 0,
+  "input_token_limit": "not_applicable_no_llm",
+  "scope_note": "窗口基线从默认任务重放最近N条自建用户事件；不代表所有聊天模型。这不是原大纲的等Token、实模Memory消融实验。",
+  "summary": {
+    "structured": {
+      "passed": 8,
+      "total": 8
+    },
+    "recent_events_replay": {
+      "passed": 5,
+      "total": 8
+    }
+  },
+  "rows": [
+    {
+      "case_id": "R01",
+      "title": "保留窗口外A时间",
+      "policy": "structured",
+      "passed": true,
+      "wrong_fields": [],
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 3600,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1000,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 3600,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1000,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      }
+    },
+    {
+      "case_id": "R01",
+      "title": "保留窗口外A时间",
+      "policy": "recent_events_replay",
+      "passed": false,
+      "wrong_fields": [
+        "person_a.max_duration_seconds"
+      ],
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1000,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 3600,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1000,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      }
+    },
+    {
+      "case_id": "R02",
+      "title": "只改A仍保留B的旧上限",
+      "policy": "structured",
+      "passed": true,
+      "wrong_fields": [],
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 3600,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2400,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1000,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 3600,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2400,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1000,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      }
+    },
+    {
+      "case_id": "R02",
+      "title": "只改A仍保留B的旧上限",
+      "policy": "recent_events_replay",
+      "passed": false,
+      "wrong_fields": [
+        "person_b.max_duration_seconds",
+        "person_b.max_walk_meters"
+      ],
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 3600,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 3600,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2400,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1000,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      }
+    },
+    {
+      "case_id": "R03",
+      "title": "本次覆盖不污染长期偏好",
+      "policy": "structured",
+      "passed": true,
+      "wrong_fields": [],
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 2,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {
+          "max_transfers": 0
+        },
+        "pending": false
+      },
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 2,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {
+          "max_transfers": 0
+        },
+        "pending": false
+      }
+    },
+    {
+      "case_id": "R03",
+      "title": "本次覆盖不污染长期偏好",
+      "policy": "recent_events_replay",
+      "passed": true,
+      "wrong_fields": [],
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 2,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {
+          "max_transfers": 0
+        },
+        "pending": false
+      },
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 2,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {
+          "max_transfers": 0
+        },
+        "pending": false
+      }
+    },
+    {
+      "case_id": "R04",
+      "title": "新会话继承A偏好，B不继承",
+      "policy": "structured",
+      "passed": true,
+      "wrong_fields": [],
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 0,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {
+          "max_transfers": 0
+        },
+        "pending": false
+      },
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 0,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {
+          "max_transfers": 0
+        },
+        "pending": false
+      }
+    },
+    {
+      "case_id": "R04",
+      "title": "新会话继承A偏好，B不继承",
+      "policy": "recent_events_replay",
+      "passed": true,
+      "wrong_fields": [],
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 0,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {
+          "max_transfers": 0
+        },
+        "pending": false
+      },
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 0,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {
+          "max_transfers": 0
+        },
+        "pending": false
+      }
+    },
+    {
+      "case_id": "R05",
+      "title": "新会话显式条件优先于长期偏好",
+      "policy": "structured",
+      "passed": true,
+      "wrong_fields": [],
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {
+          "max_duration_seconds": 3600
+        },
+        "pending": false
+      },
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {
+          "max_duration_seconds": 3600
+        },
+        "pending": false
+      }
+    },
+    {
+      "case_id": "R05",
+      "title": "新会话显式条件优先于长期偏好",
+      "policy": "recent_events_replay",
+      "passed": true,
+      "wrong_fields": [],
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {
+          "max_duration_seconds": 3600
+        },
+        "pending": false
+      },
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {
+          "max_duration_seconds": 3600
+        },
+        "pending": false
+      }
+    },
+    {
+      "case_id": "R06",
+      "title": "否定句不触发部分写入",
+      "policy": "structured",
+      "passed": true,
+      "wrong_fields": [],
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": true
+      },
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": true
+      }
+    },
+    {
+      "case_id": "R06",
+      "title": "否定句不触发部分写入",
+      "policy": "recent_events_replay",
+      "passed": true,
+      "wrong_fields": [],
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": true
+      },
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": true
+      }
+    },
+    {
+      "case_id": "R07",
+      "title": "删除偏好后新会话使用默认",
+      "policy": "structured",
+      "passed": true,
+      "wrong_fields": [],
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      }
+    },
+    {
+      "case_id": "R07",
+      "title": "删除偏好后新会话使用默认",
+      "policy": "recent_events_replay",
+      "passed": true,
+      "wrong_fields": [],
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1500,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      }
+    },
+    {
+      "case_id": "R08",
+      "title": "起点更新不能随窗口丢失",
+      "policy": "structured",
+      "passed": true,
+      "wrong_fields": [],
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点C",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1000,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点C",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1000,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      }
+    },
+    {
+      "case_id": "R08",
+      "title": "起点更新不能随窗口丢失",
+      "policy": "recent_events_replay",
+      "passed": false,
+      "wrong_fields": [
+        "person_a.origin_text"
+      ],
+      "actual": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点A",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1000,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      },
+      "expected": {
+        "requirements": {
+          "city": "北京市",
+          "venue_type": "mall",
+          "person_a.origin_text": "合成起点C",
+          "person_a.max_duration_seconds": 2700,
+          "person_a.max_transfers": 1,
+          "person_a.max_walk_meters": 1500,
+          "person_b.origin_text": "合成起点B",
+          "person_b.max_duration_seconds": 2700,
+          "person_b.max_transfers": 1,
+          "person_b.max_walk_meters": 1000,
+          "preference": "balanced"
+        },
+        "preferences": {},
+        "pending": false
+      }
+    }
+  ]
+}

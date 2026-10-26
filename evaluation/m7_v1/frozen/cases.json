@@ -1,0 +1,1225 @@
+{
+  "schema_version": 1,
+  "data_source": "self_authored_synthetic",
+  "independent_blind_holdout": false,
+  "planning": [
+    {
+      "id": "S01",
+      "title": "首轮足够，双方不需要决策",
+      "expected_has_feasible": true,
+      "requirements": {
+        "person_a": {
+          "origin_text": "合成起点A"
+        },
+        "person_b": {
+          "origin_text": "合成起点B"
+        }
+      },
+      "candidates": [
+        {
+          "id": "near0",
+          "x": -100,
+          "a": [
+            {
+              "seconds": 1800,
+              "walk": 500,
+              "transfers": 1
+            }
+          ],
+          "b": [
+            {
+              "seconds": 1800,
+              "walk": 500,
+              "transfers": 1
+            }
+          ]
+        },
+        {
+          "id": "near1",
+          "x": 0,
+          "a": [
+            {
+              "seconds": 1860,
+              "walk": 500,
+              "transfers": 1
+            }
+          ],
+          "b": [
+            {
+              "seconds": 1740,
+              "walk": 500,
+              "transfers": 1
+            }
+          ]
+        },
+        {
+          "id": "near2",
+          "x": 100,
+          "a": [
+            {
+              "seconds": 1920,
+              "walk": 500,
+              "transfers": 1
+            }
+          ],
+          "b": [
+            {
+              "seconds": 1680,
+              "walk": 500,
+              "transfers": 1
+            }
+          ]
+        }
+      ],
+      "limits": {
+        "max_map_http": 40,
+        "max_llm_calls": 12,
+        "max_search_rounds": 3,
+        "max_candidates_per_round": 5
+      }
+    },
+    {
+      "id": "S02",
+      "title": "A侧负担，A侧区域有解",
+      "expected_has_feasible": true,
+      "requirements": {
+        "person_a": {
+          "origin_text": "合成起点A"
+        },
+        "person_b": {
+          "origin_text": "合成起点B"
+        }
+      },
+      "candidates": [
+        {
+          "id": "bad",
+          "x": 0,
+          "a": [
+            {
+              "seconds": 3300,
+              "walk": 500,
+              "transfers": 1
+            }
+          ],
+          "b": [
+            {
+              "seconds": 1800,
+              "walk": 500,
+              "transfers": 1
+            }
+          ]
+        },
+        {
+          "id": "west0",
+          "x": -6000,
+          "a": [
+            {
+              "seconds": 1800,
+              "walk": 500,
+              "transfers": 1
+            }
+          ],
+          "b": [
+            {
+              "seconds": 1800,
+              "walk": 500,
+              "transfers": 1
+            }
+          ]
+        },
+        {
+          "id": "west1",
+          "x": -5900,
+          "a": [
+            {
+              "seconds": 1860,
+              "walk": 500,
+              "transfers": 1
+            }
+          ],
+          "b": [
+            {
+              "seconds": 1740,
+              "walk": 500,
+              "transfers": 1
+            }
+          ]
+        },
+        {
+          "id": "west2",
+          "x": -5800,
+          "a": [
+            {
+              "seconds": 1920,
+              "walk": 500,
+              "transfers": 1
+            }
+          ],
+          "b": [
+            {
+              "seconds": 1680,
+              "walk": 500,
+              "transfers": 1
+            }
+          ]
+        }
+      ],
+      "limits": {
+        "max_map_http": 40,
+        "max_llm_calls": 12,
+        "max_search_rounds": 3,
+        "max_candidates_per_round": 5
+      }
+    },
+    {
+      "id": "S03",
+      "title": "B侧负担，B侧区域有解",
+      "expected_has_feasible": true,
+      "requirements": {
+        "person_a": {
+          "origin_text": "合成起点A"
+        },
+        "person_b": {
+          "origin_text": "合成起点B"
+        }
+      },
+      "candidates": [
+        {
+          "id": "bad",
+          "x": 0,
+          "a": [
+            {
+              "seconds": 1800,
+              "walk": 500,
+              "transfers": 1
+            }
+          ],
+          "b": [
+            {
+              "seconds": 3300,
+              "walk": 500,
+              "transfers": 1
+            }
+          ]
+        },
+        {
+          "id": "east0",
+          "x": 5800,
+          "a": [
+            {
+              "seconds": 1800,
+              "walk": 500,
+              "transfers": 1
+            }
+          ],
+          "b": [
+            {
+              "seconds": 1800,
+              "walk": 500,
+              "transfers": 1
+            }
+          ]
+        },
+        {
+          "id": "east1",
+          "x": 5900,
+          "a": [
+            {
+              "seconds": 1860,
+              "walk": 500,
+              "transfers": 1
+            }
+          ],
+          "b": [
+            {
+              "seconds": 1740,
+              "walk": 500,
+              "transfers": 1
+            }
+          ]
+        },
+        {
+          "id": "east2",
+          "x": 6000,
+          "a": [
+            {
+              "seconds": 1920,
+              "walk": 500,
+              "transfers": 1
+            }
+          ],
+          "b": [
+            {
+              "seconds": 1680,
+              "walk": 500,
+              "transfers": 1
+            }
+          ]
+        }
+      ],
+      "limits": {
+        "max_map_http": 40,
+        "max_llm_calls": 12,
+        "max_search_rounds": 3,
+        "max_candidates_per_round": 5
+      }
+    },
+    {
+      "id": "S04",
+      "title": "首轮无路线，扩大半径有解",
+      "expected_has_feasible": true,
+      "requirements": {
+        "person_a": {
+          "origin_text": "合成起点A"
+        },
+        "person_b": {
+          "origin_text": "合成起点B"
+        }
+      },
+      "candidates": [
+        {
+          "id": "noroute",
+          "x": 0,
+          "a": [],
+          "b": [
+            {
+              "seconds": 1800,
+              "walk": 500,
+              "transfers": 1
+            }
+          ]
+        },
+        {
+          "id": "outer0",
+          "x": 2300,
+          "a": [
+            {
+              "seconds": 1800,
+              "walk": 500,
+              "transfers": 1
+            }
+          ],
+          "b": [
+            {
+              "seconds": 1800,
+              "walk": 500,
+              "transfers": 1
+            }
+          ]
+        },
+        {
+          "id": "outer1",
+          "x": 2400,
+          "a": [
+            {
+              "seconds": 1860,
+              "walk": 500,
+              "transfers": 1
+            }
+          ],
+          "b": [
+            {
+              "seconds": 1740,
+              "walk": 500,
+              "transfers": 1
+            }
+          ]
+        },
+        {
+          "id": "outer2",
+          "x": 2500,
+          "a": [
+            {
+              "seconds": 1920,
+              "walk": 500,
+              "transfers": 1
+            }
+          ],
+          "b": [
+            {
+              "seconds": 1680,
+              "walk": 500,
+              "transfers": 1
+            }
+          ]
+        }
+      ],
+      "limits": {
+        "max_map_http": 40,
+        "max_llm_calls": 12,
+        "max_search_rounds": 3,
+        "max_candidates_per_round": 5
+      }
+    },
+    {
+      "id": "S05",
+      "title": "方向提示有误，B1多查一轮",
+      "expected_has_feasible": true,
+      "requirements": {
+        "person_a": {
+          "origin_text": "合成起点A"
+        },
+        "person_b": {
+          "origin_text": "合成起点B"
+        }
+      },
+      "candidates": [
+        {
+          "id": "bad",
+          "x": 0,
+          "a": [
+            {
+              "seconds": 3300,
+              "walk": 500,
+              "transfers": 1
+            }
+          ],
+          "b": [
+            {
+              "seconds": 1800,
+              "walk": 500,
+              "transfers": 1
+            }
+          ]
+        },
+        {
+          "id": "outer0",
+          "x": 2300,
+          "a": [
+            {
+              "seconds": 1800,
+              "walk": 500,
+              "transfers": 1
+            }
+          ],
+          "b": [
+            {
+              "seconds": 1800,
+              "walk": 500,
+              "transfers": 1
+            }
+          ]
+        },
+        {
+          "id": "outer1",
+          "x": 2400,
+          "a": [
+            {
+              "seconds": 1860,
+              "walk": 500,
+              "transfers": 1
+            }
+          ],
+          "b": [
+            {
+              "seconds": 1740,
+              "walk": 500,
+              "transfers": 1
+            }
+          ]
+        },
+        {
+          "id": "outer2",
+          "x": 2500,
+          "a": [
+            {
+              "seconds": 1920,
+              "walk": 500,
+              "transfers": 1
+            }
+          ],
+          "b": [
+            {
+              "seconds": 1680,
+              "walk": 500,
+              "transfers": 1
+            }
+          ]
+        }
+      ],
+      "limits": {
+        "max_map_http": 40,
+        "max_llm_calls": 12,
+        "max_search_rounds": 3,
+        "max_candidates_per_round": 5
+      }
+    },
+    {
+      "id": "S06",
+      "title": "误导性反馈使B1漏掉半径5km的解",
+      "expected_has_feasible": true,
+      "requirements": {
+        "person_a": {
+          "origin_text": "合成起点A"
+        },
+        "person_b": {
+          "origin_text": "合成起点B"
+        }
+      },
+      "candidates": [
+        {
+          "id": "bad",
+          "x": 0,
+          "a": [
+            {
+              "seconds": 3300,
+              "walk": 500,
+              "transfers": 1
+            }
+          ],
+          "b": [
+            {
+              "seconds": 1800,
+              "walk": 500,
+              "transfers": 1
+            }
+          ]
+        },
+        {
+          "id": "decoy",
+          "x": -5000,
+          "a": [
+            {
+              "seconds": 3300,
+              "walk": 500,
+              "transfers": 1
+            }
+          ],
+          "b": [
+            {
+              "seconds": 1800,
+              "walk": 500,
+              "transfers": 1
+            }
+          ]
+        },
+        {
+          "id": "outer0",
+          "x": 4200,
+          "a": [
+            {
+              "seconds": 1800,
+              "walk": 500,
+              "transfers": 1
+            }
+          ],
+          "b": [
+            {
+              "seconds": 1800,
+              "walk": 500,
+              "transfers": 1
+            }
+          ]
+        },
+        {
+          "id": "outer1",
+          "x": 4300,
+          "a": [
+            {
+              "seconds": 1860,
+              "walk": 500,
+              "transfers": 1
+            }
+          ],
+          "b": [
+            {
+              "seconds": 1740,
+              "walk": 500,
+              "transfers": 1
+            }
+          ]
+        },
+        {
+          "id": "outer2",
+          "x": 4400,
+          "a": [
+            {
+              "seconds": 1920,
+              "walk": 500,
+              "transfers": 1
+            }
+          ],
+          "b": [
+            {
+              "seconds": 1680,
+              "walk": 500,
+              "transfers": 1
+            }
+          ]
+        }
+      ],
+      "limits": {
+        "max_map_http": 40,
+        "max_llm_calls": 12,
+        "max_search_rounds": 3,
+        "max_candidates_per_round": 5
+      }
+    },
+    {
+      "id": "S07",
+      "title": "双方都交付，方案质量不同",
+      "expected_has_feasible": true,
+      "requirements": {
+        "person_a": {
+          "origin_text": "合成起点A"
+        },
+        "person_b": {
+          "origin_text": "合成起点B"
+        }
+      },
+      "candidates": [
+        {
+          "id": "ordinary",
+          "x": 0,
+          "a": [
+            {
+              "seconds": 2400,
+              "walk": 500,
+              "transfers": 1
+            }
+          ],
+          "b": [
+            {
+              "seconds": 2400,
+              "walk": 500,
+              "transfers": 1
+            }
+          ]
+        },
+        {
+          "id": "bad",
+          "x": 200,
+          "a": [
+            {
+              "seconds": 3300,
+              "walk": 500,
+              "transfers": 1
+            }
+          ],
+          "b": [
+            {
+              "seconds": 1800,
+              "walk": 500,
+              "transfers": 1
+            }
+          ]
+        },
+        {
+          "id": "better0",
+          "x": -6000,
+          "a": [
+            {
+              "seconds": 1800,
+              "walk": 500,
+              "transfers": 1
+            }
+          ],
+          "b": [
+            {
+              "seconds": 1800,
+              "walk": 500,
+              "transfers": 1
+            }
+          ]
+        },
+        {
+          "id": "better1",
+          "x": -5900,
+          "a": [
+            {
+              "seconds": 1860,
+              "walk": 500,
+              "transfers": 1
+            }
+          ],
+          "b": [
+            {
+              "seconds": 1740,
+              "walk": 500,
+              "transfers": 1
+            }
+          ]
+        },
+        {
+          "id": "better2",
+          "x": -5800,
+          "a": [
+            {
+              "seconds": 1920,
+              "walk": 500,
+              "transfers": 1
+            }
+          ],
+          "b": [
+            {
+              "seconds": 1680,
+              "walk": 500,
+              "transfers": 1
+            }
+          ]
+        }
+      ],
+      "limits": {
+        "max_map_http": 40,
+        "max_llm_calls": 12,
+        "max_search_rounds": 3,
+        "max_candidates_per_round": 5
+      }
+    },
+    {
+      "id": "S08",
+      "title": "自建全集中无满足时间约束的解",
+      "expected_has_feasible": false,
+      "requirements": {
+        "person_a": {
+          "origin_text": "合成起点A"
+        },
+        "person_b": {
+          "origin_text": "合成起点B"
+        }
+      },
+      "candidates": [
+        {
+          "id": "bad1",
+          "x": 0,
+          "a": [
+            {
+              "seconds": 3300,
+              "walk": 500,
+              "transfers": 1
+            }
+          ],
+          "b": [
+            {
+              "seconds": 1800,
+              "walk": 500,
+              "transfers": 1
+            }
+          ]
+        },
+        {
+          "id": "bad2",
+          "x": -5000,
+          "a": [
+            {
+              "seconds": 3300,
+              "walk": 500,
+              "transfers": 1
+            }
+          ],
+          "b": [
+            {
+              "seconds": 1800,
+              "walk": 500,
+              "transfers": 1
+            }
+          ]
+        },
+        {
+          "id": "bad3",
+          "x": 5000,
+          "a": [
+            {
+              "seconds": 1800,
+              "walk": 500,
+              "transfers": 1
+            }
+          ],
+          "b": [
+            {
+              "seconds": 3300,
+              "walk": 500,
+              "transfers": 1
+            }
+          ]
+        }
+      ],
+      "limits": {
+        "max_map_http": 40,
+        "max_llm_calls": 12,
+        "max_search_rounds": 3,
+        "max_candidates_per_round": 5
+      }
+    },
+    {
+      "id": "S09",
+      "title": "必需耗时未知，不能当0",
+      "expected_has_feasible": false,
+      "requirements": {
+        "person_a": {
+          "origin_text": "合成起点A"
+        },
+        "person_b": {
+          "origin_text": "合成起点B"
+        }
+      },
+      "candidates": [
+        {
+          "id": "unknown",
+          "x": 0,
+          "a": [
+            {
+              "seconds": null,
+              "walk": 500,
+              "transfers": 1
+            }
+          ],
+          "b": [
+            {
+              "seconds": 1800,
+              "walk": 500,
+              "transfers": 1
+            }
+          ]
+        }
+      ],
+      "limits": {
+        "max_map_http": 40,
+        "max_llm_calls": 12,
+        "max_search_rounds": 3,
+        "max_candidates_per_round": 5
+      }
+    },
+    {
+      "id": "S10",
+      "title": "双方路线至少一侧不存在",
+      "expected_has_feasible": false,
+      "requirements": {
+        "person_a": {
+          "origin_text": "合成起点A"
+        },
+        "person_b": {
+          "origin_text": "合成起点B"
+        }
+      },
+      "candidates": [
+        {
+          "id": "no_route",
+          "x": 0,
+          "a": [],
+          "b": [
+            {
+              "seconds": 1800,
+              "walk": 500,
+              "transfers": 1
+            }
+          ]
+        }
+      ],
+      "limits": {
+        "max_map_http": 40,
+        "max_llm_calls": 12,
+        "max_search_rounds": 3,
+        "max_candidates_per_round": 5
+      }
+    },
+    {
+      "id": "S11",
+      "title": "临界上限及多条备选路线",
+      "expected_has_feasible": true,
+      "requirements": {
+        "person_a": {
+          "origin_text": "合成起点A"
+        },
+        "person_b": {
+          "origin_text": "合成起点B"
+        }
+      },
+      "candidates": [
+        {
+          "id": "boundary",
+          "x": 0,
+          "a": [
+            {
+              "seconds": 1200,
+              "walk": 2000,
+              "transfers": 1
+            },
+            {
+              "seconds": 2700,
+              "walk": 1500,
+              "transfers": 1
+            }
+          ],
+          "b": [
+            {
+              "seconds": 2700,
+              "walk": 1500,
+              "transfers": 1
+            }
+          ]
+        },
+        {
+          "id": "unknown",
+          "x": 200,
+          "a": [
+            {
+              "seconds": null,
+              "walk": 500,
+              "transfers": 1
+            }
+          ],
+          "b": [
+            {
+              "seconds": 1800,
+              "walk": 500,
+              "transfers": 1
+            }
+          ]
+        },
+        {
+          "id": "transfers",
+          "x": 400,
+          "a": [
+            {
+              "seconds": 1200,
+              "walk": 200,
+              "transfers": 2
+            }
+          ],
+          "b": [
+            {
+              "seconds": 1800,
+              "walk": 500,
+              "transfers": 1
+            }
+          ]
+        }
+      ],
+      "limits": {
+        "max_map_http": 40,
+        "max_llm_calls": 12,
+        "max_search_rounds": 3,
+        "max_candidates_per_round": 5
+      }
+    },
+    {
+      "id": "S12",
+      "title": "HTTP预算中断第二个候选，只交付完整项",
+      "expected_has_feasible": true,
+      "requirements": {
+        "person_a": {
+          "origin_text": "合成起点A"
+        },
+        "person_b": {
+          "origin_text": "合成起点B"
+        }
+      },
+      "candidates": [
+        {
+          "id": "complete",
+          "x": 0,
+          "a": [
+            {
+              "seconds": 1800,
+              "walk": 500,
+              "transfers": 1
+            }
+          ],
+          "b": [
+            {
+              "seconds": 1800,
+              "walk": 500,
+              "transfers": 1
+            }
+          ]
+        },
+        {
+          "id": "partial",
+          "x": 100,
+          "a": [
+            {
+              "seconds": 1800,
+              "walk": 500,
+              "transfers": 1
+            }
+          ],
+          "b": [
+            {
+              "seconds": 1800,
+              "walk": 500,
+              "transfers": 1
+            }
+          ]
+        }
+      ],
+      "limits": {
+        "max_map_http": 6,
+        "max_llm_calls": 12,
+        "max_search_rounds": 3,
+        "max_candidates_per_round": 5
+      }
+    }
+  ],
+  "memory": [
+    {
+      "id": "R01",
+      "title": "保留窗口外A时间",
+      "events": [
+        {
+          "op": "new",
+          "a": {
+            "origin_text": "合成起点A"
+          },
+          "b": {
+            "origin_text": "合成起点B"
+          }
+        },
+        {
+          "op": "say",
+          "text": "我最多60分钟"
+        },
+        {
+          "op": "say",
+          "text": "朋友最多步行1000米"
+        },
+        {
+          "op": "say",
+          "text": "均衡优先"
+        },
+        {
+          "op": "say",
+          "text": "朋友最多换乘1次"
+        }
+      ],
+      "expected_changes_from_defaults": {
+        "person_a.max_duration_seconds": 3600,
+        "person_b.max_walk_meters": 1000
+      },
+      "expected_preferences": {},
+      "expected_pending": false
+    },
+    {
+      "id": "R02",
+      "title": "只改A仍保留B的旧上限",
+      "events": [
+        {
+          "op": "new",
+          "a": {
+            "origin_text": "合成起点A"
+          },
+          "b": {
+            "origin_text": "合成起点B"
+          }
+        },
+        {
+          "op": "say",
+          "text": "朋友最多40分钟"
+        },
+        {
+          "op": "say",
+          "text": "朋友最多步行1000米"
+        },
+        {
+          "op": "say",
+          "text": "均衡优先"
+        },
+        {
+          "op": "say",
+          "text": "朋友最多换乘1次"
+        },
+        {
+          "op": "say",
+          "text": "我这次可以接受60分钟"
+        }
+      ],
+      "expected_changes_from_defaults": {
+        "person_a.max_duration_seconds": 3600,
+        "person_b.max_duration_seconds": 2400,
+        "person_b.max_walk_meters": 1000
+      },
+      "expected_preferences": {},
+      "expected_pending": false
+    },
+    {
+      "id": "R03",
+      "title": "本次覆盖不污染长期偏好",
+      "events": [
+        {
+          "op": "save",
+          "values": {
+            "max_transfers": 0
+          }
+        },
+        {
+          "op": "new",
+          "a": {
+            "origin_text": "合成起点A"
+          },
+          "b": {
+            "origin_text": "合成起点B"
+          }
+        },
+        {
+          "op": "say",
+          "text": "我这次最多换乘2次"
+        }
+      ],
+      "expected_changes_from_defaults": {
+        "person_a.max_transfers": 2
+      },
+      "expected_preferences": {
+        "max_transfers": 0
+      },
+      "expected_pending": false
+    },
+    {
+      "id": "R04",
+      "title": "新会话继承A偏好，B不继承",
+      "events": [
+        {
+          "op": "new",
+          "a": {
+            "origin_text": "合成起点A"
+          },
+          "b": {
+            "origin_text": "合成起点B"
+          }
+        },
+        {
+          "op": "say",
+          "text": "以后默认最多换乘0次"
+        },
+        {
+          "op": "new",
+          "a": {
+            "origin_text": "合成起点A"
+          },
+          "b": {
+            "origin_text": "合成起点B"
+          }
+        }
+      ],
+      "expected_changes_from_defaults": {
+        "person_a.max_transfers": 0
+      },
+      "expected_preferences": {
+        "max_transfers": 0
+      },
+      "expected_pending": false
+    },
+    {
+      "id": "R05",
+      "title": "新会话显式条件优先于长期偏好",
+      "events": [
+        {
+          "op": "save",
+          "values": {
+            "max_duration_seconds": 3600
+          }
+        },
+        {
+          "op": "new",
+          "a": {
+            "origin_text": "合成起点A",
+            "max_duration_seconds": 2700
+          },
+          "b": {
+            "origin_text": "合成起点B"
+          }
+        }
+      ],
+      "expected_changes_from_defaults": {},
+      "expected_preferences": {
+        "max_duration_seconds": 3600
+      },
+      "expected_pending": false
+    },
+    {
+      "id": "R06",
+      "title": "否定句不触发部分写入",
+      "events": [
+        {
+          "op": "new",
+          "a": {
+            "origin_text": "合成起点A"
+          },
+          "b": {
+            "origin_text": "合成起点B"
+          }
+        },
+        {
+          "op": "say",
+          "text": "不要把我改成60分钟"
+        }
+      ],
+      "expected_changes_from_defaults": {},
+      "expected_preferences": {},
+      "expected_pending": true
+    },
+    {
+      "id": "R07",
+      "title": "删除偏好后新会话使用默认",
+      "events": [
+        {
+          "op": "save",
+          "values": {
+            "max_transfers": 0
+          }
+        },
+        {
+          "op": "new",
+          "a": {
+            "origin_text": "合成起点A"
+          },
+          "b": {
+            "origin_text": "合成起点B"
+          }
+        },
+        {
+          "op": "say",
+          "text": "删除我的全部长期偏好"
+        },
+        {
+          "op": "new",
+          "a": {
+            "origin_text": "合成起点A"
+          },
+          "b": {
+            "origin_text": "合成起点B"
+          }
+        }
+      ],
+      "expected_changes_from_defaults": {},
+      "expected_preferences": {},
+      "expected_pending": false
+    },
+    {
+      "id": "R08",
+      "title": "起点更新不能随窗口丢失",
+      "events": [
+        {
+          "op": "new",
+          "a": {
+            "origin_text": "合成起点A"
+          },
+          "b": {
+            "origin_text": "合成起点B"
+          }
+        },
+        {
+          "op": "say",
+          "text": "我从合成起点C出发"
+        },
+        {
+          "op": "say",
+          "text": "朋友最多步行1000米"
+        },
+        {
+          "op": "say",
+          "text": "均衡优先"
+        },
+        {
+          "op": "say",
+          "text": "朋友最多换乘1次"
+        }
+      ],
+      "expected_changes_from_defaults": {
+        "person_a.origin_text": "合成起点C",
+        "person_b.max_walk_meters": 1000
+      },
+      "expected_preferences": {},
+      "expected_pending": false
+    }
+  ]
+}

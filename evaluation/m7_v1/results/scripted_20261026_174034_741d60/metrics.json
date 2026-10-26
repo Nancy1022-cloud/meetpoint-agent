@@ -1,0 +1,325 @@
+{
+  "by_policy": {
+    "B0": {
+      "total_runs": 12,
+      "eligible_runs_with_known_solution": 9,
+      "successful_eligible_runs": 7,
+      "success_rate": 0.7777777777777778,
+      "recommendations_checked": 7,
+      "recommendation_violations": 0,
+      "invalid_recommendations": 0,
+      "hard_constraint_violation_rate": 0.0,
+      "budget_failures": 0,
+      "counter_failures": 0,
+      "simulated_map_http_total": 111,
+      "real_llm_attempts_total": 0,
+      "prompt_tokens_reported": 0,
+      "completion_tokens_reported": 0,
+      "map_http_mean_per_run": 9.25,
+      "synthetic_tools_elapsed_mean_seconds": 0.13772691666666667
+    },
+    "B1": {
+      "total_runs": 12,
+      "eligible_runs_with_known_solution": 9,
+      "successful_eligible_runs": 8,
+      "success_rate": 0.8888888888888888,
+      "recommendations_checked": 9,
+      "recommendation_violations": 0,
+      "invalid_recommendations": 0,
+      "hard_constraint_violation_rate": 0.0,
+      "budget_failures": 0,
+      "counter_failures": 0,
+      "simulated_map_http_total": 119,
+      "real_llm_attempts_total": 0,
+      "prompt_tokens_reported": 0,
+      "completion_tokens_reported": 0,
+      "map_http_mean_per_run": 9.916666666666666,
+      "synthetic_tools_elapsed_mean_seconds": 0.28468866666666665
+    }
+  },
+  "B1_per_task_repetitions": [
+    {
+      "case_id": "S01",
+      "B1_completed_runs": 1,
+      "B1_total_runs": 1,
+      "map_http_min": 9,
+      "map_http_max": 9,
+      "stop_reasons": [
+        "feasible_target_reached"
+      ]
+    },
+    {
+      "case_id": "S02",
+      "B1_completed_runs": 1,
+      "B1_total_runs": 1,
+      "map_http_min": 12,
+      "map_http_max": 12,
+      "stop_reasons": [
+        "feasible_target_reached"
+      ]
+    },
+    {
+      "case_id": "S03",
+      "B1_completed_runs": 1,
+      "B1_total_runs": 1,
+      "map_http_min": 12,
+      "map_http_max": 12,
+      "stop_reasons": [
+        "feasible_target_reached"
+      ]
+    },
+    {
+      "case_id": "S04",
+      "B1_completed_runs": 1,
+      "B1_total_runs": 1,
+      "map_http_min": 12,
+      "map_http_max": 12,
+      "stop_reasons": [
+        "feasible_target_reached"
+      ]
+    },
+    {
+      "case_id": "S05",
+      "B1_completed_runs": 1,
+      "B1_total_runs": 1,
+      "map_http_min": 13,
+      "map_http_max": 13,
+      "stop_reasons": [
+        "feasible_target_reached"
+      ]
+    },
+    {
+      "case_id": "S06",
+      "B1_completed_runs": 0,
+      "B1_total_runs": 1,
+      "map_http_min": 9,
+      "map_http_max": 9,
+      "stop_reasons": [
+        "budget_exhausted:search_rounds"
+      ]
+    },
+    {
+      "case_id": "S07",
+      "B1_completed_runs": 1,
+      "B1_total_runs": 1,
+      "map_http_min": 12,
+      "map_http_max": 12,
+      "stop_reasons": [
+        "feasible_target_reached"
+      ]
+    },
+    {
+      "case_id": "S08",
+      "B1_completed_runs": 0,
+      "B1_total_runs": 1,
+      "map_http_min": 9,
+      "map_http_max": 9,
+      "stop_reasons": [
+        "budget_exhausted:search_rounds"
+      ]
+    },
+    {
+      "case_id": "S09",
+      "B1_completed_runs": 0,
+      "B1_total_runs": 1,
+      "map_http_min": 7,
+      "map_http_max": 7,
+      "stop_reasons": [
+        "budget_exhausted:search_rounds"
+      ]
+    },
+    {
+      "case_id": "S10",
+      "B1_completed_runs": 0,
+      "B1_total_runs": 1,
+      "map_http_min": 7,
+      "map_http_max": 7,
+      "stop_reasons": [
+        "budget_exhausted:search_rounds"
+      ]
+    },
+    {
+      "case_id": "S11",
+      "B1_completed_runs": 1,
+      "B1_total_runs": 1,
+      "map_http_min": 11,
+      "map_http_max": 11,
+      "stop_reasons": [
+        "budget_exhausted:search_rounds"
+      ]
+    },
+    {
+      "case_id": "S12",
+      "B1_completed_runs": 1,
+      "B1_total_runs": 1,
+      "map_http_min": 6,
+      "map_http_max": 6,
+      "stop_reasons": [
+        "budget_exhausted:map_http"
+      ]
+    }
+  ],
+  "paired_quality_coverage": {
+    "both_completed": 6,
+    "all_pairs": 12
+  },
+  "paired_deltas": [
+    {
+      "case_id": "S01",
+      "repeat": 1,
+      "B0_completed": true,
+      "B1_completed": true,
+      "both_completed": true,
+      "map_http_delta_B1_minus_B0": 0,
+      "llm_attempts_delta_B1_minus_B0": 0,
+      "elapsed_delta_synthetic_tools_seconds": 0.12476399999999999,
+      "quality_delta_B1_minus_B0": {
+        "max_duration_seconds": 0,
+        "gap_seconds": 0,
+        "total_duration_seconds": 0
+      }
+    },
+    {
+      "case_id": "S02",
+      "repeat": 1,
+      "B0_completed": false,
+      "B1_completed": true,
+      "both_completed": false,
+      "map_http_delta_B1_minus_B0": 5,
+      "llm_attempts_delta_B1_minus_B0": 0,
+      "elapsed_delta_synthetic_tools_seconds": 0.157723,
+      "quality_delta_B1_minus_B0": null
+    },
+    {
+      "case_id": "S03",
+      "repeat": 1,
+      "B0_completed": false,
+      "B1_completed": true,
+      "both_completed": false,
+      "map_http_delta_B1_minus_B0": 5,
+      "llm_attempts_delta_B1_minus_B0": 0,
+      "elapsed_delta_synthetic_tools_seconds": 0.16306499999999996,
+      "quality_delta_B1_minus_B0": null
+    },
+    {
+      "case_id": "S04",
+      "repeat": 1,
+      "B0_completed": true,
+      "B1_completed": true,
+      "both_completed": true,
+      "map_http_delta_B1_minus_B0": 0,
+      "llm_attempts_delta_B1_minus_B0": 0,
+      "elapsed_delta_synthetic_tools_seconds": 0.12389299999999998,
+      "quality_delta_B1_minus_B0": {
+        "max_duration_seconds": 0,
+        "gap_seconds": 0,
+        "total_duration_seconds": 0
+      }
+    },
+    {
+      "case_id": "S05",
+      "repeat": 1,
+      "B0_completed": true,
+      "B1_completed": true,
+      "both_completed": true,
+      "map_http_delta_B1_minus_B0": 1,
+      "llm_attempts_delta_B1_minus_B0": 0,
+      "elapsed_delta_synthetic_tools_seconds": 0.16510599999999998,
+      "quality_delta_B1_minus_B0": {
+        "max_duration_seconds": 0,
+        "gap_seconds": 0,
+        "total_duration_seconds": 0
+      }
+    },
+    {
+      "case_id": "S06",
+      "repeat": 1,
+      "B0_completed": true,
+      "B1_completed": false,
+      "both_completed": false,
+      "map_http_delta_B1_minus_B0": -4,
+      "llm_attempts_delta_B1_minus_B0": 0,
+      "elapsed_delta_synthetic_tools_seconds": 0.14170799999999997,
+      "quality_delta_B1_minus_B0": null
+    },
+    {
+      "case_id": "S07",
+      "repeat": 1,
+      "B0_completed": true,
+      "B1_completed": true,
+      "both_completed": true,
+      "map_http_delta_B1_minus_B0": 3,
+      "llm_attempts_delta_B1_minus_B0": 0,
+      "elapsed_delta_synthetic_tools_seconds": 0.156565,
+      "quality_delta_B1_minus_B0": {
+        "max_duration_seconds": -540,
+        "gap_seconds": 120,
+        "total_duration_seconds": -1200
+      }
+    },
+    {
+      "case_id": "S08",
+      "repeat": 1,
+      "B0_completed": false,
+      "B1_completed": false,
+      "both_completed": false,
+      "map_http_delta_B1_minus_B0": -2,
+      "llm_attempts_delta_B1_minus_B0": 0,
+      "elapsed_delta_synthetic_tools_seconds": 0.136647,
+      "quality_delta_B1_minus_B0": null
+    },
+    {
+      "case_id": "S09",
+      "repeat": 1,
+      "B0_completed": false,
+      "B1_completed": false,
+      "both_completed": false,
+      "map_http_delta_B1_minus_B0": 0,
+      "llm_attempts_delta_B1_minus_B0": 0,
+      "elapsed_delta_synthetic_tools_seconds": 0.170076,
+      "quality_delta_B1_minus_B0": null
+    },
+    {
+      "case_id": "S10",
+      "repeat": 1,
+      "B0_completed": false,
+      "B1_completed": false,
+      "both_completed": false,
+      "map_http_delta_B1_minus_B0": 0,
+      "llm_attempts_delta_B1_minus_B0": 0,
+      "elapsed_delta_synthetic_tools_seconds": 0.156069,
+      "quality_delta_B1_minus_B0": null
+    },
+    {
+      "case_id": "S11",
+      "repeat": 1,
+      "B0_completed": true,
+      "B1_completed": true,
+      "both_completed": true,
+      "map_http_delta_B1_minus_B0": 0,
+      "llm_attempts_delta_B1_minus_B0": 0,
+      "elapsed_delta_synthetic_tools_seconds": 0.18051299999999998,
+      "quality_delta_B1_minus_B0": {
+        "max_duration_seconds": 0,
+        "gap_seconds": 0,
+        "total_duration_seconds": 0
+      }
+    },
+    {
+      "case_id": "S12",
+      "repeat": 1,
+      "B0_completed": true,
+      "B1_completed": true,
+      "both_completed": true,
+      "map_http_delta_B1_minus_B0": 0,
+      "llm_attempts_delta_B1_minus_B0": 0,
+      "elapsed_delta_synthetic_tools_seconds": 0.087412,
+      "quality_delta_B1_minus_B0": {
+        "max_duration_seconds": 0,
+        "gap_seconds": 0,
+        "total_duration_seconds": 0
+      }
+    }
+  ],
+  "note": "B0每任务一次；B1每任务保留每次重复。质量差仅比较双方都交付的配对。负值表示B1在该指标更小；合成工具计数和耗时不等同真实接口成本。"
+}
