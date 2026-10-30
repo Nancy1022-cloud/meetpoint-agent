@@ -1,0 +1,8 @@
+{
+  "base_commit": "33a71b8da042a5daa828e1a888900b84785e860c",
+  "original_normalized_sha256": {
+    "app/m5_api.py": "f337273d3f7c5b4f01f009ff18cdcf1e7f58b2ffbfbbd540f22bce5740f0dbd2",
+    "app/m6_runtime.py": "80331e2a08aefa66efb64f0477fbdcc24c00fb117204cd6abe1a065240bd3b63",
+    "app/static/meetpoint.html": "db5fbce6f44e89d4c3002dcfaf78cff2f4cb22fa80db5a5c942528ac20d85030"
+  }
+}

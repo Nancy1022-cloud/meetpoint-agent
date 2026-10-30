@@ -11,13 +11,17 @@ from app.m5_models import (
     RecoverRequest, SetPreferences,
 )
 from app.m5_store import MemoryStore
+from app.m11_scope import apply_scoped_message  # M9_INTEGRATION_V1 M11_INTEGRATION_V1
 
 router = APIRouter(prefix="/api/m5", tags=["M5 Memory"])
 
 
 def call(method, *args):
     try:
-        return getattr(MemoryStore(), method)(*args)
+        store = MemoryStore()
+        if method == "apply_message":
+            return apply_scoped_message(store, *args)
+        return getattr(store, method)(*args)
     except StateError as exc:
         raise HTTPException(status_code=exc.status, detail={
             "code": exc.code, "message": exc.message, **exc.details,

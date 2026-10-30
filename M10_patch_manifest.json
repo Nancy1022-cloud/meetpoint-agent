@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "files": {
+    "app/m6_runtime.py": {
+      "before": "f2c0e0a3f5f329aa6e8816e12a3720992e3941d1a64759019e332f8872dbc7ee",
+      "after": "b07b28a6ae60776bebec8d937dd6732860811b4ebff73bc7329581cdfaf761cd",
+      "replacements": [
+        {
+          "old": "from app.m4_decider import LLMDecider",
+          "new": "from app.m10_decider import M10LLMDecider as LLMDecider  # M10_INTEGRATION_V1"
+        },
+        {
+          "old": "from app.m5_checkpoint import MemoryPlanner, inspect_checkpoint, saver_for",
+          "new": "from app.m5_checkpoint import inspect_checkpoint, saver_for\nfrom app.m10_planner import M10Planner as MemoryPlanner  # M10_INTEGRATION_V1"
+        }
+      ]
+    }
+  }
+}

@@ -51,7 +51,7 @@ function paintPrefs(){const out=$('preferences');out.replaceChildren(node('p','�
 async function loadMemory(fillInputs=true){if(!S.memory)return;const d=await api('/api/m5/tasks/'+S.memory.task.session_id+'?user_id='+encodeURIComponent(user()));if(S.job&&d.task.constraints_version!==S.job.constraints_version){clearResults();banner('条件版本已变化，旧推荐已清除，请重新规划。');}paintMemory(d,fillInputs);}
 function personInput(role){const p={origin_text:$(role+'Origin').value.trim()};for(const [suffix,key,factor] of [['Minutes','max_duration_seconds',60],['Transfers','max_transfers',1],['Walk','max_walk_meters',1]]){const raw=$(role+suffix).value;if(raw!=='')p[key]=Number(raw)*factor;}return p;}
 $('requirementsForm').addEventListener('submit',e=>{e.preventDefault();act(async()=>{const u=user();const desired={person_a:personInput('a'),person_b:personInput('b')};if($('preference').value)desired.preference=$('preference').value;let d;if(!S.memory){d=await api('/api/m5/tasks','POST',{user_id:u,...desired});clearResults();chat('双方要求已确认。点击“开始规划”，再分别点选 A、B 的正确起点。');}else{const old=S.memory.task.requirements;const changes={};for(const role of ['person_a','person_b']){const patch={};for(const [k,v]of Object.entries(desired[role]))if(v!==old[role][k])patch[k]=v;if(Object.keys(patch).length)changes[role]=patch;}if(desired.preference&&desired.preference!==old.preference)changes.preference=desired.preference;if(!Object.keys(changes).length){banner('条件未变化。');return;}d=await api('/api/m5/tasks/'+S.memory.task.session_id,'PATCH',{user_id:u,expected_version:S.memory.task.constraints_version,changes});clearResults();chat('已更新：'+d.changed_fields.join('、')+'。请重新规划。');}paintMemory(d);banner('条件已保存。');});});
-$('messageForm').addEventListener('submit',e=>{e.preventDefault();act(async()=>{if(!S.memory)throw Error('先在左侧确认双方起点和条件。');const text=$('message').value.trim();if(!text)throw Error('请先输入修改要求。');chat(text,true);const d=await api('/api/m5/tasks/'+S.memory.task.session_id+'/message','POST',{user_id:user(),expected_version:S.memory.task.constraints_version,expected_preferences_revision:S.prefs.revision,text});if(d.replan_required||d.status==='needs_clarification')clearResults();paintMemory(d);if(d.status==='needs_clarification')chat(d.question);else if(d.status==='preferences_updated')chat('长期默认值已保存。当前任务条件保持；新会话会使用它。');else chat(d.changed_fields.length?'只修改了：'+d.changed_fields.join('、')+'。请重新规划。':'条件未变化。');$('message').value='';banner(d.status==='needs_clarification'?'请明确新要求后再规划。':'更新完成。');});});
+$('messageForm').addEventListener('submit',e=>{e.preventDefault();act(async()=>{if(!S.memory)throw Error('先在左侧确认双方起点和条件。');const text=$('message').value.trim();if(!text)throw Error('请先输入修改要求。');chat(text,true);const d=await api('/api/m5/tasks/'+S.memory.task.session_id+'/message','POST',{user_id:user(),expected_version:S.memory.task.constraints_version,expected_preferences_revision:S.prefs.revision,text});if(d.replan_required||d.status==='needs_clarification')clearResults();paintMemory(d);if(d.status==='refused')chat(d.message+' '+d.capabilities);else if(d.status==='needs_clarification')chat(d.question);else if(d.status==='preferences_updated')chat('长期默认值已保存。当前任务条件保持；新会话会使用它。');else chat(d.changed_fields.length?'只修改了：'+d.changed_fields.join('、')+'。请重新规划。':'条件未变化。');$('message').value='';banner(d.status==='refused'?'该请求超出支持范围。':d.status==='needs_clarification'?'请明确新要求后再规划。':'更新完成。');});});
 document.querySelectorAll('[data-sample]').forEach(b=>b.addEventListener('click',()=>{$('message').value=b.dataset.sample;$('message').focus();}));
 $('newSession').onclick=()=>act(async()=>{clearResults();S.memory=null;$('sessionId').value='';for(const r of ['a','b'])for(const f of ['Minutes','Transfers','Walk'])$(r+f).value='';$('preference').value='';$('version').textContent='未创建';$('conditions').replaceChildren();$('saveRequirements').textContent='确认条件';$('recover').classList.add('hidden');S.prefs=await api('/api/m5/preferences?user_id='+encodeURIComponent(user()));paintPrefs();remember();banner('填写新会话要求；留空的限制将沿用相关长期偏好或默认值。');});
 $('switchUser').onclick=()=>act(async()=>{S.owner=null;const u=user();clearResults();S.owner=u;S.memory=null;$('sessionId').value='';$('conditions').replaceChildren();$('chat').replaceChildren();$('version').textContent='未创建';$('saveRequirements').textContent='确认条件';$('recover').classList.add('hidden');for(const r of ['a','b'])for(const f of ['Minutes','Transfers','Walk'])$(r+f).value='';$('preference').value='';S.prefs=await api('/api/m5/preferences?user_id='+encodeURIComponent(u));paintPrefs();remember();banner('已切换演示用户。请确认本次要求。');});
@@ -63,10 +63,60 @@ $('savePreference').onclick=()=>act(async()=>{S.prefs=await api('/api/m5/prefere
 async function deletePrefs(keys){S.prefs=await api('/api/m5/preferences','DELETE',{user_id:user(),expected_revision:S.prefs.revision,keys});paintPrefs();banner('指定长期偏好已删除；当前任务保持。');}
 $('deletePreference').onclick=()=>act(()=>deletePrefs([$('prefField').value]));$('clearPreferences').onclick=()=>act(()=>deletePrefs([]));
 function stopText(reason){if(!reason)return '尚未结束';if(reason.startsWith('budget_exhausted:'))return '已到预算上限：'+reason.split(':')[1];return reasonText[reason]||reason;}
+// M9_INTEGRATION_V1: injected into the existing page by apply_m9_changes.py.
+function paintM9Cards(d) {
+  const out = $('cards');
+  out.replaceChildren();
+  const view = d.result?.m9_presentation;
+  if (!d.result) return;
+  if (!view) {
+    $('outcome').textContent = '证据模块尚未就绪，请重启服务后重新规划。';
+    return;
+  }
+  $('outcome').textContent = view.headline;
+  if (d.error) $('outcome').append(node('p', d.error.code + '：' + d.error.message));
+  if (d.result.pending_user) $('outcome').append(node('p', d.result.pending_user));
+  if (d.confirmation_timed_out) $('outcome').append(node('p', '起点确认已超时，可重新规划后确认。'));
+  $('outcome').append(node('p', view.scope_note, 'muted'));
+  if (!view.evidence_valid) return;
+  for (const [index, item] of view.cards.entries()) {
+    const card = node('article', undefined, 'candidate');
+    card.append(node('span', '方案 ' + (index + 1), 'badge'), node('h3', item.name));
+    card.append(node('p', '地点编号：' + item.candidate_id, 'muted'));
+    const row = node('div', undefined, 'grid2');
+    for (const role of ['a', 'b']) {
+      const route = item[role], box = node('div', undefined, 'route');
+      box.append(node('small', role === 'a' ? 'A · 我' : 'B · 朋友'),
+        node('strong', seconds(route.duration_seconds)),
+        node('p', '换乘 ' + route.transfers + ' 次 · 步行 ' + route.walk_meters + ' 米'));
+      row.append(box);
+    }
+    card.append(row, node('p', '总耗时 ' + seconds(item.total_duration_seconds) +
+      ' · 时间差 ' + seconds(item.gap_seconds)));
+    card.append(node('small', '总耗时与时间差由双方已引用的耗时计算。', 'muted'));
+    const details = node('details');
+    details.append(node('summary', '查看本方案的 8 项引用依据'));
+    const labels = {poi_id:'地点编号', name:'地点名称', duration_seconds:'通勤耗时',
+      walk_meters:'步行距离', transfers:'换乘次数'};
+    for (const claim of item.claims) {
+      const proof = item.evidence.find(e => e.evidence_id === claim.evidence_ids[0]);
+      const part = node('div', undefined, 'logline');
+      part.append(node('strong', (claim.role ? claim.role.toUpperCase() + ' · ' : '') +
+        labels[claim.field] + '：' + claim.value + ' ' + claim.unit));
+      part.append(node('p', '引用编号：' + claim.evidence_ids.join('、'), 'muted'));
+      if (proof) part.append(node('small', '本次运行 ' + proof.run_id + ' · 条件 v' +
+        proof.constraints_version + (proof.route_id ? ' · 路线 ' + proof.route_id : '')));
+      details.append(part);
+    }
+    card.append(details);
+    out.append(card);
+  }
+}
+
 function paintJob(d){S.job=d;const counters=d.run.counters,limits=d.run.limits;$('stats').replaceChildren();for(const [value,label]of [[counters.map_http+' / '+limits.max_map_http,'地图 HTTP'],[counters.llm_calls+' / '+limits.max_llm_calls,'模型调用'],[counters.search_rounds+' / '+limits.max_search_rounds,'搜索轮数'],[d.elapsed_seconds.toFixed(1)+'s','总耗时（含点选等待）']]){const n=node('div',undefined,'stat');n.append(node('strong',value),node('span',label));$('stats').append(n);}
 const pending=d.pending;if(pending&&pending.prompt_id!==S.prompt){S.prompt=pending.prompt_id;const out=$('originChoices');out.replaceChildren(node('h3','请确认 '+pending.role.toUpperCase()+' 的出发点：'+pending.query),node('p','请在 '+pending.timeout_seconds+' 秒内核对名称、地址并点选。','muted'));pending.places.forEach((place,i)=>{const b=node('button',(i+1)+'. '+place.name,'choice');b.append(node('span',(place.address||'未提供地址')+' · '+place.poi_id));b.onclick=()=>act(async()=>{out.querySelectorAll('button').forEach(n=>n.disabled=true);try{await api('/api/m6/jobs/'+d.run_id+'/choice','POST',{user_id:user(),prompt_id:pending.prompt_id,index:i+1});banner('起点已确认，正在继续。');}catch(e){S.prompt=null;throw e;}});out.append(b);});}else if(!pending){S.prompt=null;$('originChoices').replaceChildren();}
 const result=d.result;$('outcome').className='notice'+(d.error?' error':'');$('outcome').textContent=(result?(outcomeText[result.outcome]||result.outcome):statusText[d.status]||d.status)+'。'+(d.working?'请等待调用完成或确认起点。':stopText(d.run.stop_reason)+'。');if(d.error)$('outcome').append(node('p',d.error.code+'：'+d.error.message));if(result?.pending_user)$('outcome').append(node('p',result.pending_user));if(d.confirmation_timed_out)$('outcome').append(node('p','起点确认已超时。可重新规划，再点选双方起点。'));if(result?.recommendations?.length)$('outcome').append(node('p','已评估可行候选 '+result.feasible_count+' 个；筛选后展示 '+result.recommendations.length+' 个。'));
-const cards=$('cards');cards.replaceChildren();for(const [index,item]of(result?.recommendations||[]).entries()){const card=node('article',undefined,'candidate');card.append(node('span','方案 '+(index+1),'badge'),node('h3',item.candidate.name),node('p',item.candidate.address||'地址未提供','muted'));const row=node('div',undefined,'grid2');for(const role of ['a','b']){const route=item[role].selected_route,box=node('div',undefined,'route');box.append(node('small',role==='a'?'A · 我':'B · 朋友'),node('strong',seconds(route.duration_seconds)),node('p','换乘 '+route.transfers+' 次 · 步行 '+route.walk_meters+' 米'));box.append(node('small',route.line_options.map(g=>g.join(' / ')).join(' → ')||'未提供线路名称'));row.append(box);}card.append(row,node('p','两人时间差 '+seconds(item.metrics.gap_seconds)+' · 总耗时 '+seconds(item.metrics.total_duration_seconds)));cards.append(card);}
+paintM9Cards(d);
 $('checks').textContent=result?JSON.stringify(result.candidate_checks,null,2):'尚未完成评估。';const ev=$('events');ev.replaceChildren();for(const e of d.events){let text=e.step;if(e.step==='execute')text=(e.source==='shared_first_round'?'共同首轮':'执行模型动作')+'：'+actionText[e.action]+'，半径 '+e.radius_meters+' 米';if(e.step==='tool_result')text='第 '+e.round+' 轮：'+e.feedback.search_status+'，接纳 '+e.feedback.accepted_count+' 个，评估 '+e.feedback.evaluated_count+' 个';if(e.step==='decision')text='模型选择 '+actionText[e.decision.action]+'：'+e.reason;if(e.step==='decision_rejected')text='模型动作未通过校验，执行器拒绝执行';if(e.step==='stop')text='结束：'+stopText(e.reason);const n=node('div',text,'logline');if(e.feedback){const details=node('details');details.append(node('summary','查看双方失败摘要'),node('pre',JSON.stringify(e.feedback,null,2)));n.append(details);}ev.append(n);}
 $('runDetails').textContent=JSON.stringify({run_id:d.run_id,execution_mode:d.run.execution_mode,constraints_version:d.constraints_version,departure_date:d.departure_date,departure_time:d.departure_time,stop_reason:d.run.stop_reason,model:d.model,checkpoint_audit:d.checkpoint_audit,meta:d.meta},null,2);$('copyMetrics').disabled=d.working||!d.meta;controls();}
 async function poll(){const rid=S.runId;if(!rid)return;const d=await api('/api/m6/jobs/'+rid+'?user_id='+encodeURIComponent(user()));if(S.runId!==rid)return;paintJob(d);if(d.working){S.timer=setTimeout(()=>poll().catch(e=>{banner('连接中断：'+e.message+' 点击“连接本次运行”重试。',true);}),800);}else if(S.done!==rid){S.done=rid;await loadMemory(false);banner('本次已结束。停止原因：'+stopText(d.run.stop_reason));}}
@@ -77,5 +127,122 @@ $('readEvents').onclick=()=>act(async()=>{if(!S.memory)throw Error('先创建或
 function metrics(){const d=S.job,r=d.result,m=d.model;return {record_type:'m6_online_integration',data_source:'amap_live',decision_source:'real_llm_when_needed',tested_at:d.meta.tested_at,code_version:d.meta.code_version,api_version:d.meta.api_version,run_id:d.run_id,constraints_version:d.constraints_version,departure_date:d.departure_date,departure_time:d.departure_time,status:d.status,stop_reason:d.run.stop_reason,outcome:r?.outcome||null,completed_plan:!!r?.recommendations?.length,recommendations_count:r?.recommendations?.length||0,feasible_evaluated_count:r?.feasible_count||0,evaluated_count:r?.evaluated_count||0,limits:d.run.limits,counters:d.run.counters,real_map_http_attempts:d.real_map_http_attempts,map_retries:d.map_retries,model:m,elapsed_seconds_including_confirmation:d.elapsed_seconds,checkpoint_audit:d.checkpoint_audit,error_code:d.error?.code||null,note:'本次在线接入记录；不是策略评测，不包含地图候选、坐标或路线。'};}
 $('copyMetrics').onclick=()=>act(async()=>{if(!S.job||S.job.working)throw Error('本次尚未完成。');const text=JSON.stringify(metrics(),null,2);try{await navigator.clipboard.writeText(text);banner('验收摘要已复制，可粘贴到记录文件。');}catch{$('runDetails').textContent=text;banner('剪贴板不可用，请在“本次运行与指标”中手动复制摘要。');}});
 (async()=>{$('departureDate').value=new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());try{const saved=JSON.parse(localStorage.getItem('meetpoint_m6_ids')||'{}');if(saved.user_id)$('userId').value=saved.user_id;if(saved.session_id)$('sessionId').value=saved.session_id;}catch{}try{await api('/api/m6/health');S.owner=user();S.prefs=await api('/api/m5/preferences?user_id='+encodeURIComponent(user()));paintPrefs();banner('服务已连接。先确认本次要求，已有会话可以恢复条件。');chat('我会按双方各自的限制查询路线。你可以修改本次条件，也可以明确保存以后使用的默认值。');}catch(e){banner(e.message,true);}controls();})();
+</script>
+<!-- M11_INTEGRATION_V1 -->
+<script>
+// M11_INTEGRATION_V1: existing demo state remains the single source of identity.
+(() => {
+  const panel = node('section', undefined, 'panel');
+  panel.id = 'm11Panel';
+  panel.append(node('h2', '自然语言修改预览'));
+  panel.append(node('p', '我 = A，朋友 / 他 / 她 = B。先预览，再确认；默认偏好只保存 A 本人。', 'muted'));
+  const input = node('textarea'); input.maxLength = 400;
+  input.placeholder = '他那边放宽到一小时，我的限制不变，这次别记成默认。';
+  input.setAttribute('aria-label', '自然语言条件修改');
+  const generate = node('button', '生成预览（调用模型）', 'primary');
+  const rule = node('button', '受控句式预览');
+  const confirm = node('button', '确认这些修改', 'primary');
+  const cancel = node('button', '取消预览');
+  const history = node('button', '查看修改记录');
+  const output = node('div'); output.setAttribute('aria-live', 'polite');
+  const rows = node('div', undefined, 'row'); rows.append(generate, rule, confirm, cancel, history);
+  panel.append(input, rows, output);
+  confirm.disabled = cancel.disabled = true;
+  const anchor = $('messageForm')?.closest('section');
+  if (!anchor) return;
+  anchor.after(panel);
+  let pending = null;
+  const labels = {max_duration_seconds:'通勤上限',max_transfers:'换乘上限',max_walk_meters:'步行上限',origin_text:'出发点',preference:'排序'};
+  function value(path, v) {
+    if (v === null || v === undefined) return '未设置';
+    if (path.endsWith('max_duration_seconds')) return (v / 60) + ' 分钟';
+    if (path.endsWith('max_walk_meters')) return v + ' 米';
+    if (path.endsWith('max_transfers')) return v + ' 次';
+    return v === 'balanced' ? '均衡优先' : v === 'total_time' ? '总耗时优先' : String(v);
+  }
+  function base() {
+    if (!S.memory) throw Error('请先创建或恢复会话。');
+    if (S.job?.working) throw Error('请先结束当前规划。');
+    return {user_id:user(),expected_version:S.memory.task.constraints_version,expected_preferences_revision:S.prefs.revision};
+  }
+  async function preview(parser) {
+    const request = {...base(),text:input.value.trim(),parser};
+    if (!request.text) throw Error('请输入要修改的条件。');
+    pending = null; confirm.disabled = cancel.disabled = true;
+    output.replaceChildren(node('p', '正在解析，请稍候。'));
+    generate.disabled = rule.disabled = true;
+    try {
+      const sid = S.memory.task.session_id;
+      const data = await api('/api/m11/tasks/' + sid + '/preview', 'POST', request);
+      output.replaceChildren();
+      if (data.status !== 'awaiting_confirmation') {
+        output.append(node('p', data.message || data.question)); return;
+      }
+      pending = {data,request,sid,owner:S.owner};
+      for (const item of data.diff) {
+        const [role, field] = item.path.includes('.') ? item.path.split('.') : ['',item.path];
+        const who = role === 'person_a' ? 'A · 我' : role === 'person_b' ? 'B · 朋友' : '';
+        output.append(node('p', (item.scope === 'defaults' ? '以后默认 A' : '本次 ' + who) + ' · ' +
+          labels[field] + '：' + value(item.path,item.before) + ' → ' + value(item.path,item.after)));
+      }
+      output.append(node('p', data.notice, 'muted'));
+      if (data.model_usage) output.append(node('small', '模型尝试 ' + data.model_usage.attempts +
+        ' 次 · Token ' + (data.model_usage.tokens?.total_tokens ?? '未知')));
+      confirm.disabled = cancel.disabled = false;
+    } finally { generate.disabled = rule.disabled = false; }
+  }
+  generate.onclick = () => act(() => preview('llm'));
+  rule.onclick = () => act(() => preview('rule'));
+  confirm.onclick = () => act(async () => {
+    const p = pending; if (!p) return;
+    const current = base();
+    if (S.memory.task.session_id !== p.sid || S.owner !== p.owner ||
+        current.expected_version !== p.request.expected_version ||
+        current.expected_preferences_revision !== p.request.expected_preferences_revision) {
+      pending = null; confirm.disabled = cancel.disabled = true;
+      throw Error('人物、会话或版本已变化，请重新生成预览。');
+    }
+    confirm.disabled = true;
+    const data = await api('/api/m11/tasks/' + p.sid + '/proposals/' + p.data.proposal_id + '/confirm',
+      'POST', {user_id:current.user_id,expected_version:p.data.base_version,expected_preferences_revision:p.data.base_revision});
+    pending = null; cancel.disabled = true;
+    if (data.replan_required) clearResults();
+    paintMemory(data);
+    output.append(node('p', '修改已确认。' + (data.replan_required ? '请重新规划。' : '默认值用于之后新建的会话。')));
+  });
+  cancel.onclick = () => act(async () => {
+    const p = pending; if (!p) return;
+    await api('/api/m11/tasks/' + p.sid + '/proposals/' + p.data.proposal_id + '/cancel','POST',{user_id:user()});
+    pending = null; confirm.disabled = cancel.disabled = true;
+    output.replaceChildren(node('p', '已取消，条件没有修改。'));
+  });
+  history.onclick = () => act(async () => {
+    base();
+    const data = await api('/api/m11/tasks/' + S.memory.task.session_id + '/proposals?user_id=' + encodeURIComponent(user()));
+    output.replaceChildren(node('pre', JSON.stringify(data,null,2)));
+  });
+  // Availability is not inferred from valid transit routes. Slack uses only
+  // already-validated route values and the matching current constraint version.
+  const originalPaint = paintM9Cards;
+  paintM9Cards = function(data) {
+    originalPaint(data);
+    const view = data.result?.m9_presentation;
+    if (!view?.evidence_valid) return;
+    for (const [index, card] of [...$('cards').children].entries()) {
+      const item = view.cards[index];
+      if (!item) continue;
+      const suspect = /装修|停业|暂停营业/.test(item.name || '');
+      card.append(node('p', suspect ? '名称含可用性提示，营业状态尚未核验，请确认后再前往。' :
+        '营业时间与是否正常营业：未知，当前未查询营业信息。', suspect ? 'notice warn' : 'muted'));
+      if (S.memory?.task.constraints_version !== data.constraints_version) continue;
+      for (const role of ['a','b']) {
+        const limits = S.memory.task.requirements['person_' + role], route = item[role];
+        const margin = limits.max_duration_seconds - route.duration_seconds;
+        if (Number.isFinite(margin)) card.append(node('small', role.toUpperCase() +
+          ' 距通勤上限还剩 ' + (margin / 60).toFixed(1) + ' 分钟。'));
+      }
+    }
+  };
+})();
 </script>
 </body></html>

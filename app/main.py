@@ -51,3 +51,7 @@ def health():
 
 from app.m6_api import router as m6_router
 app.include_router(m6_router)
+
+# M11_INTEGRATION_V1
+from app.m11_api import router as m11_router
+app.include_router(m11_router)

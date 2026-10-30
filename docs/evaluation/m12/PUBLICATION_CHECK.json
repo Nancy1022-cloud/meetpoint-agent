@@ -1,0 +1,26 @@
+{
+  "checked_at": "2026-10-30T21:55:59+08:00",
+  "base_commit": "33a71b8da042a5daa828e1a888900b84785e860c",
+  "source_digest": "db2239cb2adf2d9e57d626a9954f734b94521fb18de7afee8cfc4402e4f37127",
+  "frozen_source_files_checked": 80,
+  "frozen_source_bytes_unchanged": true,
+  "offline_unittest": {
+    "count": 366,
+    "result": "OK",
+    "elapsed_seconds": 13.275,
+    "network_disabled": true,
+    "real_model_calls": 0,
+    "real_map_http": 0
+  },
+  "environment": {
+    "python": "3.12.14",
+    "fastapi": "0.162.0",
+    "httpx": "0.28.1",
+    "openai": "1.109.1",
+    "pydantic": "2.14.2",
+    "langgraph": "1.0.5",
+    "langgraph-checkpoint-sqlite": "3.0.3"
+  },
+  "original_evaluation_rerun": false,
+  "original_measurement_complete": false
+}

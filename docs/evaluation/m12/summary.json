@@ -1,0 +1,2426 @@
+{
+  "schema_version": 1,
+  "planned": 1680,
+  "started": 1680,
+  "valid_results": 1680,
+  "integrity_errors": [],
+  "measurement_complete": false,
+  "hard_checks_passed": true,
+  "quality_targets_passed": true,
+  "acceptance_gate_passed": false,
+  "by_policy_group": {
+    "B0:main": {
+      "planned_trials": 240,
+      "unique_case_ids": 80,
+      "scenario_families": 16,
+      "acceptance": {
+        "numerator": 210,
+        "denominator": 240,
+        "value": 0.875
+      },
+      "known_solvable_delivery": {
+        "numerator": 165,
+        "denominator": 195,
+        "value": 0.8461538461538461
+      },
+      "citation_precision": {
+        "numerator": 2640,
+        "denominator": 2640,
+        "value": 1.0
+      },
+      "citation_coverage": {
+        "numerator": 2640,
+        "denominator": 2640,
+        "value": 1.0
+      },
+      "refusal_precision": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "refusal_recall": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "false_refusal_rate": {
+        "numerator": 0,
+        "denominator": 240,
+        "value": 0.0
+      },
+      "refusal_confusion": {
+        "TP": 0,
+        "FP": 0,
+        "FN": 0,
+        "TN": 240
+      },
+      "outcomes": {
+        "recommended": 165,
+        "budget_exhausted": 60,
+        "tool_unavailable": 15
+      },
+      "hard_violations": 0,
+      "cost": {
+        "started_tasks": 240,
+        "tool_task_coverage": {
+          "numerator": 240,
+          "denominator": 240,
+          "value": 1.0
+        },
+        "token_task_coverage": {
+          "numerator": 240,
+          "denominator": 240,
+          "value": 1.0
+        },
+        "usage_coverage": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "real_llm_attempts": 0,
+        "returned_models": [],
+        "tool_calls_mean": 9.0,
+        "tool_calls_complete_subset_mean": 9.0,
+        "tool_calls_observed_total": 2160,
+        "tool_calls_by_name": {
+          "resolve_place": 480,
+          "search_meeting_places": 615,
+          "get_transit_routes": 1065
+        },
+        "simulated_http_mean": 9.0,
+        "real_map_http_total": 0,
+        "token_mean": {
+          "prompt_tokens": 0.0,
+          "completion_tokens": 0.0,
+          "total_tokens": 0.0
+        },
+        "token_observed_totals": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "total_tokens": 0
+        },
+        "token_observed_lower_bound_mean": {
+          "prompt_tokens": 0.0,
+          "completion_tokens": 0.0,
+          "total_tokens": 0.0
+        },
+        "token_complete_subset_mean": {
+          "prompt_tokens": 0.0,
+          "completion_tokens": 0.0,
+          "total_tokens": 0.0
+        },
+        "estimated_cost_yuan": 0,
+        "observed_cost_yuan_lower_bound": 0,
+        "elapsed_mean_seconds": 0.6145989791666666
+      },
+      "presentation_outcomes": {
+        "recommended": 165,
+        "budget_exhausted": 75
+      },
+      "search_stop_kinds": {
+        "search_finished": 90,
+        "budget_exhausted": 150
+      }
+    },
+    "B0:planning": {
+      "planned_trials": 240,
+      "unique_case_ids": 80,
+      "scenario_families": 16,
+      "acceptance": {
+        "numerator": 210,
+        "denominator": 240,
+        "value": 0.875
+      },
+      "known_solvable_delivery": {
+        "numerator": 165,
+        "denominator": 195,
+        "value": 0.8461538461538461
+      },
+      "citation_precision": {
+        "numerator": 2640,
+        "denominator": 2640,
+        "value": 1.0
+      },
+      "citation_coverage": {
+        "numerator": 2640,
+        "denominator": 2640,
+        "value": 1.0
+      },
+      "refusal_precision": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "refusal_recall": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "false_refusal_rate": {
+        "numerator": 0,
+        "denominator": 240,
+        "value": 0.0
+      },
+      "refusal_confusion": {
+        "TP": 0,
+        "FP": 0,
+        "FN": 0,
+        "TN": 240
+      },
+      "outcomes": {
+        "recommended": 165,
+        "budget_exhausted": 60,
+        "tool_unavailable": 15
+      },
+      "hard_violations": 0,
+      "cost": {
+        "started_tasks": 240,
+        "tool_task_coverage": {
+          "numerator": 240,
+          "denominator": 240,
+          "value": 1.0
+        },
+        "token_task_coverage": {
+          "numerator": 240,
+          "denominator": 240,
+          "value": 1.0
+        },
+        "usage_coverage": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "real_llm_attempts": 0,
+        "returned_models": [],
+        "tool_calls_mean": 9.0,
+        "tool_calls_complete_subset_mean": 9.0,
+        "tool_calls_observed_total": 2160,
+        "tool_calls_by_name": {
+          "resolve_place": 480,
+          "search_meeting_places": 615,
+          "get_transit_routes": 1065
+        },
+        "simulated_http_mean": 9.0,
+        "real_map_http_total": 0,
+        "token_mean": {
+          "prompt_tokens": 0.0,
+          "completion_tokens": 0.0,
+          "total_tokens": 0.0
+        },
+        "token_observed_totals": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "total_tokens": 0
+        },
+        "token_observed_lower_bound_mean": {
+          "prompt_tokens": 0.0,
+          "completion_tokens": 0.0,
+          "total_tokens": 0.0
+        },
+        "token_complete_subset_mean": {
+          "prompt_tokens": 0.0,
+          "completion_tokens": 0.0,
+          "total_tokens": 0.0
+        },
+        "estimated_cost_yuan": 0,
+        "observed_cost_yuan_lower_bound": 0,
+        "elapsed_mean_seconds": 0.6145989791666666
+      },
+      "presentation_outcomes": {
+        "recommended": 165,
+        "budget_exhausted": 75
+      },
+      "search_stop_kinds": {
+        "search_finished": 90,
+        "budget_exhausted": 150
+      }
+    },
+    "B0:refusal": {
+      "planned_trials": 0,
+      "unique_case_ids": 0,
+      "scenario_families": 0,
+      "acceptance": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "known_solvable_delivery": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "citation_precision": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "citation_coverage": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "refusal_precision": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "refusal_recall": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "false_refusal_rate": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "refusal_confusion": {
+        "TP": 0,
+        "FP": 0,
+        "FN": 0,
+        "TN": 0
+      },
+      "outcomes": {},
+      "hard_violations": 0,
+      "cost": {
+        "started_tasks": 0,
+        "tool_task_coverage": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "token_task_coverage": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "usage_coverage": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "real_llm_attempts": 0,
+        "returned_models": [],
+        "tool_calls_mean": null,
+        "tool_calls_complete_subset_mean": null,
+        "tool_calls_observed_total": 0,
+        "tool_calls_by_name": {},
+        "simulated_http_mean": null,
+        "real_map_http_total": 0,
+        "token_mean": {
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "total_tokens": null
+        },
+        "token_observed_totals": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "total_tokens": 0
+        },
+        "token_observed_lower_bound_mean": {
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "total_tokens": null
+        },
+        "token_complete_subset_mean": {
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "total_tokens": null
+        },
+        "estimated_cost_yuan": 0,
+        "observed_cost_yuan_lower_bound": 0,
+        "elapsed_mean_seconds": null
+      },
+      "presentation_outcomes": {},
+      "search_stop_kinds": {}
+    },
+    "B0:abnormal": {
+      "planned_trials": 0,
+      "unique_case_ids": 0,
+      "scenario_families": 0,
+      "acceptance": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "known_solvable_delivery": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "citation_precision": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "citation_coverage": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "refusal_precision": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "refusal_recall": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "false_refusal_rate": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "refusal_confusion": {
+        "TP": 0,
+        "FP": 0,
+        "FN": 0,
+        "TN": 0
+      },
+      "outcomes": {},
+      "hard_violations": 0,
+      "cost": {
+        "started_tasks": 0,
+        "tool_task_coverage": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "token_task_coverage": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "usage_coverage": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "real_llm_attempts": 0,
+        "returned_models": [],
+        "tool_calls_mean": null,
+        "tool_calls_complete_subset_mean": null,
+        "tool_calls_observed_total": 0,
+        "tool_calls_by_name": {},
+        "simulated_http_mean": null,
+        "real_map_http_total": 0,
+        "token_mean": {
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "total_tokens": null
+        },
+        "token_observed_totals": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "total_tokens": 0
+        },
+        "token_observed_lower_bound_mean": {
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "total_tokens": null
+        },
+        "token_complete_subset_mean": {
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "total_tokens": null
+        },
+        "estimated_cost_yuan": 0,
+        "observed_cost_yuan_lower_bound": 0,
+        "elapsed_mean_seconds": null
+      },
+      "presentation_outcomes": {},
+      "search_stop_kinds": {}
+    },
+    "B0:memory": {
+      "planned_trials": 0,
+      "unique_case_ids": 0,
+      "scenario_families": 0,
+      "acceptance": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "known_solvable_delivery": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "citation_precision": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "citation_coverage": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "refusal_precision": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "refusal_recall": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "false_refusal_rate": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "refusal_confusion": {
+        "TP": 0,
+        "FP": 0,
+        "FN": 0,
+        "TN": 0
+      },
+      "outcomes": {},
+      "hard_violations": 0,
+      "cost": {
+        "started_tasks": 0,
+        "tool_task_coverage": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "token_task_coverage": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "usage_coverage": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "real_llm_attempts": 0,
+        "returned_models": [],
+        "tool_calls_mean": null,
+        "tool_calls_complete_subset_mean": null,
+        "tool_calls_observed_total": 0,
+        "tool_calls_by_name": {},
+        "simulated_http_mean": null,
+        "real_map_http_total": 0,
+        "token_mean": {
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "total_tokens": null
+        },
+        "token_observed_totals": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "total_tokens": 0
+        },
+        "token_observed_lower_bound_mean": {
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "total_tokens": null
+        },
+        "token_complete_subset_mean": {
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "total_tokens": null
+        },
+        "estimated_cost_yuan": 0,
+        "observed_cost_yuan_lower_bound": 0,
+        "elapsed_mean_seconds": null
+      },
+      "presentation_outcomes": {},
+      "search_stop_kinds": {}
+    },
+    "RULE:main": {
+      "planned_trials": 240,
+      "unique_case_ids": 80,
+      "scenario_families": 16,
+      "acceptance": {
+        "numerator": 240,
+        "denominator": 240,
+        "value": 1.0
+      },
+      "known_solvable_delivery": {
+        "numerator": 195,
+        "denominator": 195,
+        "value": 1.0
+      },
+      "citation_precision": {
+        "numerator": 3360,
+        "denominator": 3360,
+        "value": 1.0
+      },
+      "citation_coverage": {
+        "numerator": 3360,
+        "denominator": 3360,
+        "value": 1.0
+      },
+      "refusal_precision": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "refusal_recall": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "false_refusal_rate": {
+        "numerator": 0,
+        "denominator": 240,
+        "value": 0.0
+      },
+      "refusal_confusion": {
+        "TP": 0,
+        "FP": 0,
+        "FN": 0,
+        "TN": 240
+      },
+      "outcomes": {
+        "recommended": 195,
+        "budget_exhausted": 30,
+        "tool_unavailable": 15
+      },
+      "hard_violations": 0,
+      "cost": {
+        "started_tasks": 240,
+        "tool_task_coverage": {
+          "numerator": 240,
+          "denominator": 240,
+          "value": 1.0
+        },
+        "token_task_coverage": {
+          "numerator": 240,
+          "denominator": 240,
+          "value": 1.0
+        },
+        "usage_coverage": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "real_llm_attempts": 0,
+        "returned_models": [],
+        "tool_calls_mean": 9.3125,
+        "tool_calls_complete_subset_mean": 9.3125,
+        "tool_calls_observed_total": 2235,
+        "tool_calls_by_name": {
+          "resolve_place": 480,
+          "search_meeting_places": 600,
+          "get_transit_routes": 1155
+        },
+        "simulated_http_mean": 9.3125,
+        "real_map_http_total": 0,
+        "token_mean": {
+          "prompt_tokens": 0.0,
+          "completion_tokens": 0.0,
+          "total_tokens": 0.0
+        },
+        "token_observed_totals": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "total_tokens": 0
+        },
+        "token_observed_lower_bound_mean": {
+          "prompt_tokens": 0.0,
+          "completion_tokens": 0.0,
+          "total_tokens": 0.0
+        },
+        "token_complete_subset_mean": {
+          "prompt_tokens": 0.0,
+          "completion_tokens": 0.0,
+          "total_tokens": 0.0
+        },
+        "estimated_cost_yuan": 0,
+        "observed_cost_yuan_lower_bound": 0,
+        "elapsed_mean_seconds": 0.7343859166666666
+      },
+      "presentation_outcomes": {
+        "recommended": 195,
+        "budget_exhausted": 45
+      },
+      "search_stop_kinds": {
+        "search_finished": 120,
+        "budget_exhausted": 120
+      }
+    },
+    "RULE:planning": {
+      "planned_trials": 240,
+      "unique_case_ids": 80,
+      "scenario_families": 16,
+      "acceptance": {
+        "numerator": 240,
+        "denominator": 240,
+        "value": 1.0
+      },
+      "known_solvable_delivery": {
+        "numerator": 195,
+        "denominator": 195,
+        "value": 1.0
+      },
+      "citation_precision": {
+        "numerator": 3360,
+        "denominator": 3360,
+        "value": 1.0
+      },
+      "citation_coverage": {
+        "numerator": 3360,
+        "denominator": 3360,
+        "value": 1.0
+      },
+      "refusal_precision": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "refusal_recall": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "false_refusal_rate": {
+        "numerator": 0,
+        "denominator": 240,
+        "value": 0.0
+      },
+      "refusal_confusion": {
+        "TP": 0,
+        "FP": 0,
+        "FN": 0,
+        "TN": 240
+      },
+      "outcomes": {
+        "recommended": 195,
+        "budget_exhausted": 30,
+        "tool_unavailable": 15
+      },
+      "hard_violations": 0,
+      "cost": {
+        "started_tasks": 240,
+        "tool_task_coverage": {
+          "numerator": 240,
+          "denominator": 240,
+          "value": 1.0
+        },
+        "token_task_coverage": {
+          "numerator": 240,
+          "denominator": 240,
+          "value": 1.0
+        },
+        "usage_coverage": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "real_llm_attempts": 0,
+        "returned_models": [],
+        "tool_calls_mean": 9.3125,
+        "tool_calls_complete_subset_mean": 9.3125,
+        "tool_calls_observed_total": 2235,
+        "tool_calls_by_name": {
+          "resolve_place": 480,
+          "search_meeting_places": 600,
+          "get_transit_routes": 1155
+        },
+        "simulated_http_mean": 9.3125,
+        "real_map_http_total": 0,
+        "token_mean": {
+          "prompt_tokens": 0.0,
+          "completion_tokens": 0.0,
+          "total_tokens": 0.0
+        },
+        "token_observed_totals": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "total_tokens": 0
+        },
+        "token_observed_lower_bound_mean": {
+          "prompt_tokens": 0.0,
+          "completion_tokens": 0.0,
+          "total_tokens": 0.0
+        },
+        "token_complete_subset_mean": {
+          "prompt_tokens": 0.0,
+          "completion_tokens": 0.0,
+          "total_tokens": 0.0
+        },
+        "estimated_cost_yuan": 0,
+        "observed_cost_yuan_lower_bound": 0,
+        "elapsed_mean_seconds": 0.7343859166666666
+      },
+      "presentation_outcomes": {
+        "recommended": 195,
+        "budget_exhausted": 45
+      },
+      "search_stop_kinds": {
+        "search_finished": 120,
+        "budget_exhausted": 120
+      }
+    },
+    "RULE:refusal": {
+      "planned_trials": 0,
+      "unique_case_ids": 0,
+      "scenario_families": 0,
+      "acceptance": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "known_solvable_delivery": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "citation_precision": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "citation_coverage": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "refusal_precision": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "refusal_recall": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "false_refusal_rate": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "refusal_confusion": {
+        "TP": 0,
+        "FP": 0,
+        "FN": 0,
+        "TN": 0
+      },
+      "outcomes": {},
+      "hard_violations": 0,
+      "cost": {
+        "started_tasks": 0,
+        "tool_task_coverage": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "token_task_coverage": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "usage_coverage": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "real_llm_attempts": 0,
+        "returned_models": [],
+        "tool_calls_mean": null,
+        "tool_calls_complete_subset_mean": null,
+        "tool_calls_observed_total": 0,
+        "tool_calls_by_name": {},
+        "simulated_http_mean": null,
+        "real_map_http_total": 0,
+        "token_mean": {
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "total_tokens": null
+        },
+        "token_observed_totals": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "total_tokens": 0
+        },
+        "token_observed_lower_bound_mean": {
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "total_tokens": null
+        },
+        "token_complete_subset_mean": {
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "total_tokens": null
+        },
+        "estimated_cost_yuan": 0,
+        "observed_cost_yuan_lower_bound": 0,
+        "elapsed_mean_seconds": null
+      },
+      "presentation_outcomes": {},
+      "search_stop_kinds": {}
+    },
+    "RULE:abnormal": {
+      "planned_trials": 0,
+      "unique_case_ids": 0,
+      "scenario_families": 0,
+      "acceptance": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "known_solvable_delivery": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "citation_precision": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "citation_coverage": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "refusal_precision": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "refusal_recall": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "false_refusal_rate": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "refusal_confusion": {
+        "TP": 0,
+        "FP": 0,
+        "FN": 0,
+        "TN": 0
+      },
+      "outcomes": {},
+      "hard_violations": 0,
+      "cost": {
+        "started_tasks": 0,
+        "tool_task_coverage": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "token_task_coverage": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "usage_coverage": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "real_llm_attempts": 0,
+        "returned_models": [],
+        "tool_calls_mean": null,
+        "tool_calls_complete_subset_mean": null,
+        "tool_calls_observed_total": 0,
+        "tool_calls_by_name": {},
+        "simulated_http_mean": null,
+        "real_map_http_total": 0,
+        "token_mean": {
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "total_tokens": null
+        },
+        "token_observed_totals": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "total_tokens": 0
+        },
+        "token_observed_lower_bound_mean": {
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "total_tokens": null
+        },
+        "token_complete_subset_mean": {
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "total_tokens": null
+        },
+        "estimated_cost_yuan": 0,
+        "observed_cost_yuan_lower_bound": 0,
+        "elapsed_mean_seconds": null
+      },
+      "presentation_outcomes": {},
+      "search_stop_kinds": {}
+    },
+    "RULE:memory": {
+      "planned_trials": 0,
+      "unique_case_ids": 0,
+      "scenario_families": 0,
+      "acceptance": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "known_solvable_delivery": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "citation_precision": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "citation_coverage": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "refusal_precision": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "refusal_recall": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "false_refusal_rate": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "refusal_confusion": {
+        "TP": 0,
+        "FP": 0,
+        "FN": 0,
+        "TN": 0
+      },
+      "outcomes": {},
+      "hard_violations": 0,
+      "cost": {
+        "started_tasks": 0,
+        "tool_task_coverage": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "token_task_coverage": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "usage_coverage": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "real_llm_attempts": 0,
+        "returned_models": [],
+        "tool_calls_mean": null,
+        "tool_calls_complete_subset_mean": null,
+        "tool_calls_observed_total": 0,
+        "tool_calls_by_name": {},
+        "simulated_http_mean": null,
+        "real_map_http_total": 0,
+        "token_mean": {
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "total_tokens": null
+        },
+        "token_observed_totals": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "total_tokens": 0
+        },
+        "token_observed_lower_bound_mean": {
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "total_tokens": null
+        },
+        "token_complete_subset_mean": {
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "total_tokens": null
+        },
+        "estimated_cost_yuan": 0,
+        "observed_cost_yuan_lower_bound": 0,
+        "elapsed_mean_seconds": null
+      },
+      "presentation_outcomes": {},
+      "search_stop_kinds": {}
+    },
+    "V1:main": {
+      "planned_trials": 480,
+      "unique_case_ids": 160,
+      "scenario_families": 32,
+      "acceptance": {
+        "numerator": 453,
+        "denominator": 480,
+        "value": 0.94375
+      },
+      "known_solvable_delivery": {
+        "numerator": 171,
+        "denominator": 195,
+        "value": 0.8769230769230769
+      },
+      "citation_precision": {
+        "numerator": 3264,
+        "denominator": 3264,
+        "value": 1.0
+      },
+      "citation_coverage": {
+        "numerator": 3264,
+        "denominator": 3264,
+        "value": 1.0
+      },
+      "refusal_precision": {
+        "numerator": 117,
+        "denominator": 117,
+        "value": 1.0
+      },
+      "refusal_recall": {
+        "numerator": 117,
+        "denominator": 120,
+        "value": 0.975
+      },
+      "false_refusal_rate": {
+        "numerator": 0,
+        "denominator": 240,
+        "value": 0.0
+      },
+      "refusal_confusion": {
+        "TP": 117,
+        "FP": 0,
+        "FN": 3,
+        "TN": 240
+      },
+      "outcomes": {
+        "recommended": 201,
+        "tool_unavailable": 82,
+        "budget_exhausted": 61,
+        "refused": 117,
+        "needs_clarification": 18,
+        "no_feasible_found": 1
+      },
+      "hard_violations": 0,
+      "cost": {
+        "started_tasks": 480,
+        "tool_task_coverage": {
+          "numerator": 480,
+          "denominator": 480,
+          "value": 1.0
+        },
+        "token_task_coverage": {
+          "numerator": 479,
+          "denominator": 480,
+          "value": 0.9979166666666667
+        },
+        "usage_coverage": {
+          "numerator": 418,
+          "denominator": 419,
+          "value": 0.9976133651551312
+        },
+        "real_llm_attempts": 419,
+        "returned_models": [
+          "qwen3.7-flash"
+        ],
+        "tool_calls_mean": 5.614583333333333,
+        "tool_calls_complete_subset_mean": 5.614583333333333,
+        "tool_calls_observed_total": 2695,
+        "tool_calls_by_name": {
+          "resolve_place": 702,
+          "search_meeting_places": 682,
+          "get_transit_routes": 1311
+        },
+        "simulated_http_mean": 5.645833333333333,
+        "real_map_http_total": 0,
+        "token_mean": {
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "total_tokens": null
+        },
+        "token_observed_totals": {
+          "prompt_tokens": 386665,
+          "completion_tokens": 20554,
+          "total_tokens": 407219
+        },
+        "token_observed_lower_bound_mean": {
+          "prompt_tokens": 805.5520833333334,
+          "completion_tokens": 42.82083333333333,
+          "total_tokens": 848.3729166666667
+        },
+        "token_complete_subset_mean": {
+          "prompt_tokens": 803.400835073069,
+          "completion_tokens": 42.701461377870565,
+          "total_tokens": 846.1022964509394
+        },
+        "estimated_cost_yuan": null,
+        "observed_cost_yuan_lower_bound": 0.0937762,
+        "elapsed_mean_seconds": 1.454433525
+      },
+      "presentation_outcomes": {
+        "recommended": 201,
+        "budget_exhausted": 106,
+        "tool_unavailable": 37,
+        "refused": 117,
+        "needs_clarification": 18,
+        "no_feasible_found": 1
+      },
+      "search_stop_kinds": {
+        "search_finished": 157,
+        "budget_exhausted": 151,
+        "tool_unavailable": 37,
+        "unsupported_scope": 117,
+        "explicit_change": 3,
+        "needs_clarification": 15
+      }
+    },
+    "V1:planning": {
+      "planned_trials": 240,
+      "unique_case_ids": 80,
+      "scenario_families": 16,
+      "acceptance": {
+        "numerator": 216,
+        "denominator": 240,
+        "value": 0.9
+      },
+      "known_solvable_delivery": {
+        "numerator": 171,
+        "denominator": 195,
+        "value": 0.8769230769230769
+      },
+      "citation_precision": {
+        "numerator": 2784,
+        "denominator": 2784,
+        "value": 1.0
+      },
+      "citation_coverage": {
+        "numerator": 2784,
+        "denominator": 2784,
+        "value": 1.0
+      },
+      "refusal_precision": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "refusal_recall": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "false_refusal_rate": {
+        "numerator": 0,
+        "denominator": 240,
+        "value": 0.0
+      },
+      "refusal_confusion": {
+        "TP": 0,
+        "FP": 0,
+        "FN": 0,
+        "TN": 240
+      },
+      "outcomes": {
+        "recommended": 171,
+        "tool_unavailable": 37,
+        "budget_exhausted": 32
+      },
+      "hard_violations": 0,
+      "cost": {
+        "started_tasks": 240,
+        "tool_task_coverage": {
+          "numerator": 240,
+          "denominator": 240,
+          "value": 1.0
+        },
+        "token_task_coverage": {
+          "numerator": 240,
+          "denominator": 240,
+          "value": 1.0
+        },
+        "usage_coverage": {
+          "numerator": 358,
+          "denominator": 358,
+          "value": 1.0
+        },
+        "real_llm_attempts": 358,
+        "returned_models": [
+          "qwen3.7-flash"
+        ],
+        "tool_calls_mean": 8.933333333333334,
+        "tool_calls_complete_subset_mean": 8.933333333333334,
+        "tool_calls_observed_total": 2144,
+        "tool_calls_by_name": {
+          "resolve_place": 480,
+          "search_meeting_places": 533,
+          "get_transit_routes": 1131
+        },
+        "simulated_http_mean": 8.933333333333334,
+        "real_map_http_total": 0,
+        "token_mean": {
+          "prompt_tokens": 1382.1666666666667,
+          "completion_tokens": 73.64166666666667,
+          "total_tokens": 1455.8083333333334
+        },
+        "token_observed_totals": {
+          "prompt_tokens": 331720,
+          "completion_tokens": 17674,
+          "total_tokens": 349394
+        },
+        "token_observed_lower_bound_mean": {
+          "prompt_tokens": 1382.1666666666667,
+          "completion_tokens": 73.64166666666667,
+          "total_tokens": 1455.8083333333334
+        },
+        "token_complete_subset_mean": {
+          "prompt_tokens": 1382.1666666666667,
+          "completion_tokens": 73.64166666666667,
+          "total_tokens": 1455.8083333333334
+        },
+        "estimated_cost_yuan": 0.0804832,
+        "observed_cost_yuan_lower_bound": 0.0804832,
+        "elapsed_mean_seconds": 2.2520370375
+      },
+      "presentation_outcomes": {
+        "recommended": 171,
+        "budget_exhausted": 62,
+        "tool_unavailable": 7
+      },
+      "search_stop_kinds": {
+        "search_finished": 141,
+        "budget_exhausted": 92,
+        "tool_unavailable": 7
+      }
+    },
+    "V1:refusal": {
+      "planned_trials": 120,
+      "unique_case_ids": 40,
+      "scenario_families": 8,
+      "acceptance": {
+        "numerator": 117,
+        "denominator": 120,
+        "value": 0.975
+      },
+      "known_solvable_delivery": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "citation_precision": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "citation_coverage": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "refusal_precision": {
+        "numerator": 117,
+        "denominator": 117,
+        "value": 1.0
+      },
+      "refusal_recall": {
+        "numerator": 117,
+        "denominator": 120,
+        "value": 0.975
+      },
+      "false_refusal_rate": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "refusal_confusion": {
+        "TP": 117,
+        "FP": 0,
+        "FN": 3,
+        "TN": 0
+      },
+      "outcomes": {
+        "refused": 117,
+        "needs_clarification": 3
+      },
+      "hard_violations": 0,
+      "cost": {
+        "started_tasks": 120,
+        "tool_task_coverage": {
+          "numerator": 120,
+          "denominator": 120,
+          "value": 1.0
+        },
+        "token_task_coverage": {
+          "numerator": 120,
+          "denominator": 120,
+          "value": 1.0
+        },
+        "usage_coverage": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "real_llm_attempts": 0,
+        "returned_models": [],
+        "tool_calls_mean": 0.0,
+        "tool_calls_complete_subset_mean": 0.0,
+        "tool_calls_observed_total": 0,
+        "tool_calls_by_name": {},
+        "simulated_http_mean": 0.0,
+        "real_map_http_total": 0,
+        "token_mean": {
+          "prompt_tokens": 0.0,
+          "completion_tokens": 0.0,
+          "total_tokens": 0.0
+        },
+        "token_observed_totals": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "total_tokens": 0
+        },
+        "token_observed_lower_bound_mean": {
+          "prompt_tokens": 0.0,
+          "completion_tokens": 0.0,
+          "total_tokens": 0.0
+        },
+        "token_complete_subset_mean": {
+          "prompt_tokens": 0.0,
+          "completion_tokens": 0.0,
+          "total_tokens": 0.0
+        },
+        "estimated_cost_yuan": 0,
+        "observed_cost_yuan_lower_bound": 0,
+        "elapsed_mean_seconds": 0.044479108333333336
+      },
+      "presentation_outcomes": {
+        "refused": 117,
+        "needs_clarification": 3
+      },
+      "search_stop_kinds": {
+        "unsupported_scope": 117,
+        "explicit_change": 3
+      }
+    },
+    "V1:abnormal": {
+      "planned_trials": 120,
+      "unique_case_ids": 40,
+      "scenario_families": 8,
+      "acceptance": {
+        "numerator": 120,
+        "denominator": 120,
+        "value": 1.0
+      },
+      "known_solvable_delivery": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "citation_precision": {
+        "numerator": 480,
+        "denominator": 480,
+        "value": 1.0
+      },
+      "citation_coverage": {
+        "numerator": 480,
+        "denominator": 480,
+        "value": 1.0
+      },
+      "refusal_precision": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "refusal_recall": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "false_refusal_rate": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "refusal_confusion": {
+        "TP": 0,
+        "FP": 0,
+        "FN": 0,
+        "TN": 0
+      },
+      "outcomes": {
+        "needs_clarification": 15,
+        "tool_unavailable": 45,
+        "budget_exhausted": 29,
+        "recommended": 30,
+        "no_feasible_found": 1
+      },
+      "hard_violations": 0,
+      "cost": {
+        "started_tasks": 120,
+        "tool_task_coverage": {
+          "numerator": 120,
+          "denominator": 120,
+          "value": 1.0
+        },
+        "token_task_coverage": {
+          "numerator": 119,
+          "denominator": 120,
+          "value": 0.9916666666666667
+        },
+        "usage_coverage": {
+          "numerator": 60,
+          "denominator": 61,
+          "value": 0.9836065573770492
+        },
+        "real_llm_attempts": 61,
+        "returned_models": [
+          "qwen3.7-flash"
+        ],
+        "tool_calls_mean": 4.591666666666667,
+        "tool_calls_complete_subset_mean": 4.591666666666667,
+        "tool_calls_observed_total": 551,
+        "tool_calls_by_name": {
+          "resolve_place": 222,
+          "search_meeting_places": 149,
+          "get_transit_routes": 180
+        },
+        "simulated_http_mean": 4.716666666666667,
+        "real_map_http_total": 0,
+        "token_mean": {
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "total_tokens": null
+        },
+        "token_observed_totals": {
+          "prompt_tokens": 54945,
+          "completion_tokens": 2880,
+          "total_tokens": 57825
+        },
+        "token_observed_lower_bound_mean": {
+          "prompt_tokens": 457.875,
+          "completion_tokens": 24.0,
+          "total_tokens": 481.875
+        },
+        "token_complete_subset_mean": {
+          "prompt_tokens": 446.29411764705884,
+          "completion_tokens": 23.361344537815125,
+          "total_tokens": 469.65546218487395
+        },
+        "estimated_cost_yuan": null,
+        "observed_cost_yuan_lower_bound": 0.013293000000000001,
+        "elapsed_mean_seconds": 1.2691809166666668
+      },
+      "presentation_outcomes": {
+        "needs_clarification": 15,
+        "tool_unavailable": 30,
+        "budget_exhausted": 44,
+        "recommended": 30,
+        "no_feasible_found": 1
+      },
+      "search_stop_kinds": {
+        "needs_clarification": 15,
+        "tool_unavailable": 30,
+        "budget_exhausted": 59,
+        "search_finished": 16
+      }
+    },
+    "V1:memory": {
+      "planned_trials": 120,
+      "unique_case_ids": 40,
+      "scenario_families": 8,
+      "acceptance": {
+        "numerator": 120,
+        "denominator": 120,
+        "value": 1.0
+      },
+      "known_solvable_delivery": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "citation_precision": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "citation_coverage": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "refusal_precision": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "refusal_recall": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "false_refusal_rate": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "refusal_confusion": {
+        "TP": 0,
+        "FP": 0,
+        "FN": 0,
+        "TN": 0
+      },
+      "outcomes": {
+        "conditions_updated": 105,
+        "needs_clarification": 15
+      },
+      "hard_violations": 0,
+      "cost": {
+        "started_tasks": 120,
+        "tool_task_coverage": {
+          "numerator": 120,
+          "denominator": 120,
+          "value": 1.0
+        },
+        "token_task_coverage": {
+          "numerator": 120,
+          "denominator": 120,
+          "value": 1.0
+        },
+        "usage_coverage": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "real_llm_attempts": 0,
+        "returned_models": [],
+        "tool_calls_mean": 0.0,
+        "tool_calls_complete_subset_mean": 0.0,
+        "tool_calls_observed_total": 0,
+        "tool_calls_by_name": {},
+        "simulated_http_mean": 0.0,
+        "real_map_http_total": 0,
+        "token_mean": {
+          "prompt_tokens": 0.0,
+          "completion_tokens": 0.0,
+          "total_tokens": 0.0
+        },
+        "token_observed_totals": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "total_tokens": 0
+        },
+        "token_observed_lower_bound_mean": {
+          "prompt_tokens": 0.0,
+          "completion_tokens": 0.0,
+          "total_tokens": 0.0
+        },
+        "token_complete_subset_mean": {
+          "prompt_tokens": 0.0,
+          "completion_tokens": 0.0,
+          "total_tokens": 0.0
+        },
+        "estimated_cost_yuan": 0,
+        "observed_cost_yuan_lower_bound": 0,
+        "elapsed_mean_seconds": 0.05681839166666667
+      },
+      "presentation_outcomes": {
+        "conditions_updated": 105,
+        "needs_clarification": 15
+      },
+      "search_stop_kinds": {
+        "conditions_updated": 105,
+        "explicit_change": 15
+      }
+    },
+    "V2:main": {
+      "planned_trials": 480,
+      "unique_case_ids": 160,
+      "scenario_families": 32,
+      "acceptance": {
+        "numerator": 462,
+        "denominator": 480,
+        "value": 0.9625
+      },
+      "known_solvable_delivery": {
+        "numerator": 180,
+        "denominator": 195,
+        "value": 0.9230769230769231
+      },
+      "citation_precision": {
+        "numerator": 3480,
+        "denominator": 3480,
+        "value": 1.0
+      },
+      "citation_coverage": {
+        "numerator": 3480,
+        "denominator": 3480,
+        "value": 1.0
+      },
+      "refusal_precision": {
+        "numerator": 117,
+        "denominator": 117,
+        "value": 1.0
+      },
+      "refusal_recall": {
+        "numerator": 117,
+        "denominator": 120,
+        "value": 0.975
+      },
+      "false_refusal_rate": {
+        "numerator": 0,
+        "denominator": 240,
+        "value": 0.0
+      },
+      "refusal_confusion": {
+        "TP": 117,
+        "FP": 0,
+        "FN": 3,
+        "TN": 240
+      },
+      "outcomes": {
+        "recommended": 210,
+        "budget_exhausted": 75,
+        "tool_unavailable": 60,
+        "refused": 117,
+        "needs_clarification": 18
+      },
+      "hard_violations": 0,
+      "cost": {
+        "started_tasks": 480,
+        "tool_task_coverage": {
+          "numerator": 480,
+          "denominator": 480,
+          "value": 1.0
+        },
+        "token_task_coverage": {
+          "numerator": 480,
+          "denominator": 480,
+          "value": 1.0
+        },
+        "usage_coverage": {
+          "numerator": 284,
+          "denominator": 284,
+          "value": 1.0
+        },
+        "real_llm_attempts": 284,
+        "returned_models": [
+          "qwen3.7-flash"
+        ],
+        "tool_calls_mean": 5.429166666666666,
+        "tool_calls_complete_subset_mean": 5.429166666666666,
+        "tool_calls_observed_total": 2606,
+        "tool_calls_by_name": {
+          "resolve_place": 702,
+          "search_meeting_places": 659,
+          "get_transit_routes": 1245
+        },
+        "simulated_http_mean": 5.460416666666666,
+        "real_map_http_total": 0,
+        "token_mean": {
+          "prompt_tokens": 630.1104166666667,
+          "completion_tokens": 28.933333333333334,
+          "total_tokens": 659.04375
+        },
+        "token_observed_totals": {
+          "prompt_tokens": 302453,
+          "completion_tokens": 13888,
+          "total_tokens": 316341
+        },
+        "token_observed_lower_bound_mean": {
+          "prompt_tokens": 630.1104166666667,
+          "completion_tokens": 28.933333333333334,
+          "total_tokens": 659.04375
+        },
+        "token_complete_subset_mean": {
+          "prompt_tokens": 630.1104166666667,
+          "completion_tokens": 28.933333333333334,
+          "total_tokens": 659.04375
+        },
+        "estimated_cost_yuan": 0.07160100000000001,
+        "observed_cost_yuan_lower_bound": 0.07160100000000001,
+        "elapsed_mean_seconds": 1.1357931875
+      },
+      "presentation_outcomes": {
+        "recommended": 210,
+        "budget_exhausted": 105,
+        "refused": 117,
+        "needs_clarification": 18,
+        "tool_unavailable": 30
+      },
+      "search_stop_kinds": {
+        "search_finished": 167,
+        "budget_exhausted": 148,
+        "unsupported_scope": 117,
+        "explicit_change": 3,
+        "needs_clarification": 15,
+        "tool_unavailable": 30
+      }
+    },
+    "V2:planning": {
+      "planned_trials": 240,
+      "unique_case_ids": 80,
+      "scenario_families": 16,
+      "acceptance": {
+        "numerator": 225,
+        "denominator": 240,
+        "value": 0.9375
+      },
+      "known_solvable_delivery": {
+        "numerator": 180,
+        "denominator": 195,
+        "value": 0.9230769230769231
+      },
+      "citation_precision": {
+        "numerator": 3000,
+        "denominator": 3000,
+        "value": 1.0
+      },
+      "citation_coverage": {
+        "numerator": 3000,
+        "denominator": 3000,
+        "value": 1.0
+      },
+      "refusal_precision": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "refusal_recall": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "false_refusal_rate": {
+        "numerator": 0,
+        "denominator": 240,
+        "value": 0.0
+      },
+      "refusal_confusion": {
+        "TP": 0,
+        "FP": 0,
+        "FN": 0,
+        "TN": 240
+      },
+      "outcomes": {
+        "recommended": 180,
+        "budget_exhausted": 45,
+        "tool_unavailable": 15
+      },
+      "hard_violations": 0,
+      "cost": {
+        "started_tasks": 240,
+        "tool_task_coverage": {
+          "numerator": 240,
+          "denominator": 240,
+          "value": 1.0
+        },
+        "token_task_coverage": {
+          "numerator": 240,
+          "denominator": 240,
+          "value": 1.0
+        },
+        "usage_coverage": {
+          "numerator": 269,
+          "denominator": 269,
+          "value": 1.0
+        },
+        "real_llm_attempts": 269,
+        "returned_models": [
+          "qwen3.7-flash"
+        ],
+        "tool_calls_mean": 8.558333333333334,
+        "tool_calls_complete_subset_mean": 8.558333333333334,
+        "tool_calls_observed_total": 2054,
+        "tool_calls_by_name": {
+          "resolve_place": 480,
+          "search_meeting_places": 509,
+          "get_transit_routes": 1065
+        },
+        "simulated_http_mean": 8.558333333333334,
+        "real_map_http_total": 0,
+        "token_mean": {
+          "prompt_tokens": 1194.5333333333333,
+          "completion_tokens": 54.99166666666667,
+          "total_tokens": 1249.525
+        },
+        "token_observed_totals": {
+          "prompt_tokens": 286688,
+          "completion_tokens": 13198,
+          "total_tokens": 299886
+        },
+        "token_observed_lower_bound_mean": {
+          "prompt_tokens": 1194.5333333333333,
+          "completion_tokens": 54.99166666666667,
+          "total_tokens": 1249.525
+        },
+        "token_complete_subset_mean": {
+          "prompt_tokens": 1194.5333333333333,
+          "completion_tokens": 54.99166666666667,
+          "total_tokens": 1249.525
+        },
+        "estimated_cost_yuan": 0.06789600000000001,
+        "observed_cost_yuan_lower_bound": 0.06789600000000001,
+        "elapsed_mean_seconds": 1.96408175
+      },
+      "presentation_outcomes": {
+        "recommended": 180,
+        "budget_exhausted": 60
+      },
+      "search_stop_kinds": {
+        "search_finished": 152,
+        "budget_exhausted": 88
+      }
+    },
+    "V2:refusal": {
+      "planned_trials": 120,
+      "unique_case_ids": 40,
+      "scenario_families": 8,
+      "acceptance": {
+        "numerator": 117,
+        "denominator": 120,
+        "value": 0.975
+      },
+      "known_solvable_delivery": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "citation_precision": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "citation_coverage": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "refusal_precision": {
+        "numerator": 117,
+        "denominator": 117,
+        "value": 1.0
+      },
+      "refusal_recall": {
+        "numerator": 117,
+        "denominator": 120,
+        "value": 0.975
+      },
+      "false_refusal_rate": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "refusal_confusion": {
+        "TP": 117,
+        "FP": 0,
+        "FN": 3,
+        "TN": 0
+      },
+      "outcomes": {
+        "refused": 117,
+        "needs_clarification": 3
+      },
+      "hard_violations": 0,
+      "cost": {
+        "started_tasks": 120,
+        "tool_task_coverage": {
+          "numerator": 120,
+          "denominator": 120,
+          "value": 1.0
+        },
+        "token_task_coverage": {
+          "numerator": 120,
+          "denominator": 120,
+          "value": 1.0
+        },
+        "usage_coverage": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "real_llm_attempts": 0,
+        "returned_models": [],
+        "tool_calls_mean": 0.0,
+        "tool_calls_complete_subset_mean": 0.0,
+        "tool_calls_observed_total": 0,
+        "tool_calls_by_name": {},
+        "simulated_http_mean": 0.0,
+        "real_map_http_total": 0,
+        "token_mean": {
+          "prompt_tokens": 0.0,
+          "completion_tokens": 0.0,
+          "total_tokens": 0.0
+        },
+        "token_observed_totals": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "total_tokens": 0
+        },
+        "token_observed_lower_bound_mean": {
+          "prompt_tokens": 0.0,
+          "completion_tokens": 0.0,
+          "total_tokens": 0.0
+        },
+        "token_complete_subset_mean": {
+          "prompt_tokens": 0.0,
+          "completion_tokens": 0.0,
+          "total_tokens": 0.0
+        },
+        "estimated_cost_yuan": 0,
+        "observed_cost_yuan_lower_bound": 0,
+        "elapsed_mean_seconds": 0.044804833333333335
+      },
+      "presentation_outcomes": {
+        "refused": 117,
+        "needs_clarification": 3
+      },
+      "search_stop_kinds": {
+        "unsupported_scope": 117,
+        "explicit_change": 3
+      }
+    },
+    "V2:abnormal": {
+      "planned_trials": 120,
+      "unique_case_ids": 40,
+      "scenario_families": 8,
+      "acceptance": {
+        "numerator": 120,
+        "denominator": 120,
+        "value": 1.0
+      },
+      "known_solvable_delivery": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "citation_precision": {
+        "numerator": 480,
+        "denominator": 480,
+        "value": 1.0
+      },
+      "citation_coverage": {
+        "numerator": 480,
+        "denominator": 480,
+        "value": 1.0
+      },
+      "refusal_precision": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "refusal_recall": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "false_refusal_rate": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "refusal_confusion": {
+        "TP": 0,
+        "FP": 0,
+        "FN": 0,
+        "TN": 0
+      },
+      "outcomes": {
+        "needs_clarification": 15,
+        "tool_unavailable": 45,
+        "budget_exhausted": 30,
+        "recommended": 30
+      },
+      "hard_violations": 0,
+      "cost": {
+        "started_tasks": 120,
+        "tool_task_coverage": {
+          "numerator": 120,
+          "denominator": 120,
+          "value": 1.0
+        },
+        "token_task_coverage": {
+          "numerator": 120,
+          "denominator": 120,
+          "value": 1.0
+        },
+        "usage_coverage": {
+          "numerator": 15,
+          "denominator": 15,
+          "value": 1.0
+        },
+        "real_llm_attempts": 15,
+        "returned_models": [
+          "qwen3.7-flash"
+        ],
+        "tool_calls_mean": 4.6,
+        "tool_calls_complete_subset_mean": 4.6,
+        "tool_calls_observed_total": 552,
+        "tool_calls_by_name": {
+          "resolve_place": 222,
+          "search_meeting_places": 150,
+          "get_transit_routes": 180
+        },
+        "simulated_http_mean": 4.725,
+        "real_map_http_total": 0,
+        "token_mean": {
+          "prompt_tokens": 131.375,
+          "completion_tokens": 5.75,
+          "total_tokens": 137.125
+        },
+        "token_observed_totals": {
+          "prompt_tokens": 15765,
+          "completion_tokens": 690,
+          "total_tokens": 16455
+        },
+        "token_observed_lower_bound_mean": {
+          "prompt_tokens": 131.375,
+          "completion_tokens": 5.75,
+          "total_tokens": 137.125
+        },
+        "token_complete_subset_mean": {
+          "prompt_tokens": 131.375,
+          "completion_tokens": 5.75,
+          "total_tokens": 137.125
+        },
+        "estimated_cost_yuan": 0.003705000000000001,
+        "observed_cost_yuan_lower_bound": 0.003705000000000001,
+        "elapsed_mean_seconds": 0.5702044166666667
+      },
+      "presentation_outcomes": {
+        "needs_clarification": 15,
+        "tool_unavailable": 30,
+        "budget_exhausted": 45,
+        "recommended": 30
+      },
+      "search_stop_kinds": {
+        "needs_clarification": 15,
+        "tool_unavailable": 30,
+        "budget_exhausted": 60,
+        "search_finished": 15
+      }
+    },
+    "V2:memory": {
+      "planned_trials": 120,
+      "unique_case_ids": 40,
+      "scenario_families": 8,
+      "acceptance": {
+        "numerator": 120,
+        "denominator": 120,
+        "value": 1.0
+      },
+      "known_solvable_delivery": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "citation_precision": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "citation_coverage": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "refusal_precision": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "refusal_recall": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "false_refusal_rate": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "refusal_confusion": {
+        "TP": 0,
+        "FP": 0,
+        "FN": 0,
+        "TN": 0
+      },
+      "outcomes": {
+        "conditions_updated": 105,
+        "needs_clarification": 15
+      },
+      "hard_violations": 0,
+      "cost": {
+        "started_tasks": 120,
+        "tool_task_coverage": {
+          "numerator": 120,
+          "denominator": 120,
+          "value": 1.0
+        },
+        "token_task_coverage": {
+          "numerator": 120,
+          "denominator": 120,
+          "value": 1.0
+        },
+        "usage_coverage": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "real_llm_attempts": 0,
+        "returned_models": [],
+        "tool_calls_mean": 0.0,
+        "tool_calls_complete_subset_mean": 0.0,
+        "tool_calls_observed_total": 0,
+        "tool_calls_by_name": {},
+        "simulated_http_mean": 0.0,
+        "real_map_http_total": 0,
+        "token_mean": {
+          "prompt_tokens": 0.0,
+          "completion_tokens": 0.0,
+          "total_tokens": 0.0
+        },
+        "token_observed_totals": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "total_tokens": 0
+        },
+        "token_observed_lower_bound_mean": {
+          "prompt_tokens": 0.0,
+          "completion_tokens": 0.0,
+          "total_tokens": 0.0
+        },
+        "token_complete_subset_mean": {
+          "prompt_tokens": 0.0,
+          "completion_tokens": 0.0,
+          "total_tokens": 0.0
+        },
+        "estimated_cost_yuan": 0,
+        "observed_cost_yuan_lower_bound": 0,
+        "elapsed_mean_seconds": 0.056901825
+      },
+      "presentation_outcomes": {
+        "conditions_updated": 105,
+        "needs_clarification": 15
+      },
+      "search_stop_kinds": {
+        "conditions_updated": 105,
+        "explicit_change": 15
+      }
+    }
+  },
+  "note": "作者自建、作者可见且有相关场景族；不是独立盲测。主评测使用受控地图工具，真实高德HTTP为0。V1=原M9搜索与范围规则；V2=M10搜索优化；两臂Memory均为原受控解析器，40条Memory不证明M11自然语言解析能力。",
+  "m9_protocol_errors": [],
+  "m10_protocol_errors": [],
+  "all_arms_quality_targets_passed": false,
+  "quality_target_policy": "V2",
+  "optimization_counters": {
+    "B0": {
+      "route_queries_skipped": 0,
+      "fast_path_decisions": 0,
+      "decision_sources": {},
+      "note": "跳过查询数是执行器记录；HTTP/Token净变化需要看完整配对对照，不能直接等同。"
+    },
+    "RULE": {
+      "route_queries_skipped": 120,
+      "fast_path_decisions": 90,
+      "decision_sources": {
+        "deterministic_rule": 360
+      },
+      "note": "跳过查询数是执行器记录；HTTP/Token净变化需要看完整配对对照，不能直接等同。"
+    },
+    "V1": {
+      "route_queries_skipped": 0,
+      "fast_path_decisions": 0,
+      "decision_sources": {
+        "real_llm": 398
+      },
+      "note": "跳过查询数是执行器记录；HTTP/Token净变化需要看完整配对对照，不能直接等同。"
+    },
+    "V2": {
+      "route_queries_skipped": 120,
+      "fast_path_decisions": 92,
+      "decision_sources": {
+        "real_llm": 284,
+        "rule_empty_without_known_constraint_failure": 92
+      },
+      "note": "跳过查询数是执行器记录；HTTP/Token净变化需要看完整配对对照，不能直接等同。"
+    }
+  },
+  "batch_id": "m12_final_1b2172db05c3",
+  "stage": "final",
+  "model": "qwen3.7-flash",
+  "source_digest": "db2239cb2adf2d9e57d626a9954f734b94521fb18de7afee8cfc4402e4f37127",
+  "unique_task_count": 200,
+  "scenario_family_count": 40,
+  "repeat_count": 3,
+  "primary_two_arm_trials": 1200,
+  "extra_baseline_trials": 480,
+  "m12_protocol_errors": [],
+  "unmet_candidate_targets": [],
+  "M12_delivery_complete": false,
+  "known_M11_NL": {
+    "stage": "observed_development",
+    "passed": 31,
+    "planned": 36,
+    "quality_gate_passed": false
+  },
+  "M11_NL_quality_passed": false,
+  "whole_product_all_quality_goals_passed": false,
+  "online_validation": "not_executed_by_this_entry; optional and separate",
+  "repeat_stability": {
+    "B0:planning": {
+      "unique_tasks": 80,
+      "all_repeats_pass": 70,
+      "at_least_one_pass": 70,
+      "pass_count_distribution": {
+        "3": 70,
+        "0": 10
+      },
+      "note": "按用例汇总；不是更多独立题目，也不是独立同分布置信区间。"
+    },
+    "RULE:planning": {
+      "unique_tasks": 80,
+      "all_repeats_pass": 80,
+      "at_least_one_pass": 80,
+      "pass_count_distribution": {
+        "3": 80
+      },
+      "note": "按用例汇总；不是更多独立题目，也不是独立同分布置信区间。"
+    },
+    "V1:planning": {
+      "unique_tasks": 80,
+      "all_repeats_pass": 70,
+      "at_least_one_pass": 74,
+      "pass_count_distribution": {
+        "3": 70,
+        "0": 6,
+        "2": 2,
+        "1": 2
+      },
+      "note": "按用例汇总；不是更多独立题目，也不是独立同分布置信区间。"
+    },
+    "V1:refusal": {
+      "unique_tasks": 40,
+      "all_repeats_pass": 39,
+      "at_least_one_pass": 39,
+      "pass_count_distribution": {
+        "3": 39,
+        "0": 1
+      },
+      "note": "按用例汇总；不是更多独立题目，也不是独立同分布置信区间。"
+    },
+    "V1:abnormal": {
+      "unique_tasks": 40,
+      "all_repeats_pass": 40,
+      "at_least_one_pass": 40,
+      "pass_count_distribution": {
+        "3": 40
+      },
+      "note": "按用例汇总；不是更多独立题目，也不是独立同分布置信区间。"
+    },
+    "V1:memory": {
+      "unique_tasks": 40,
+      "all_repeats_pass": 40,
+      "at_least_one_pass": 40,
+      "pass_count_distribution": {
+        "3": 40
+      },
+      "note": "按用例汇总；不是更多独立题目，也不是独立同分布置信区间。"
+    },
+    "V2:planning": {
+      "unique_tasks": 80,
+      "all_repeats_pass": 75,
+      "at_least_one_pass": 75,
+      "pass_count_distribution": {
+        "3": 75,
+        "0": 5
+      },
+      "note": "按用例汇总；不是更多独立题目，也不是独立同分布置信区间。"
+    },
+    "V2:refusal": {
+      "unique_tasks": 40,
+      "all_repeats_pass": 39,
+      "at_least_one_pass": 39,
+      "pass_count_distribution": {
+        "3": 39,
+        "0": 1
+      },
+      "note": "按用例汇总；不是更多独立题目，也不是独立同分布置信区间。"
+    },
+    "V2:abnormal": {
+      "unique_tasks": 40,
+      "all_repeats_pass": 40,
+      "at_least_one_pass": 40,
+      "pass_count_distribution": {
+        "3": 40
+      },
+      "note": "按用例汇总；不是更多独立题目，也不是独立同分布置信区间。"
+    },
+    "V2:memory": {
+      "unique_tasks": 40,
+      "all_repeats_pass": 40,
+      "at_least_one_pass": 40,
+      "pass_count_distribution": {
+        "3": 40
+      },
+      "note": "按用例汇总；不是更多独立题目，也不是独立同分布置信区间。"
+    }
+  },
+  "latency": {
+    "B0:planning": {
+      "observed_tasks": 240,
+      "p50_seconds": 0.5723404999999999,
+      "p95_seconds_nearest_rank": 0.881478
+    },
+    "RULE:planning": {
+      "observed_tasks": 240,
+      "p50_seconds": 0.7032805,
+      "p95_seconds_nearest_rank": 0.986855
+    },
+    "V1:planning": {
+      "observed_tasks": 240,
+      "p50_seconds": 2.5236755,
+      "p95_seconds_nearest_rank": 3.226966
+    },
+    "V1:refusal": {
+      "observed_tasks": 120,
+      "p50_seconds": 0.0439845,
+      "p95_seconds_nearest_rank": 0.048193
+    },
+    "V1:abnormal": {
+      "observed_tasks": 120,
+      "p50_seconds": 0.443944,
+      "p95_seconds_nearest_rank": 2.656716
+    },
+    "V1:memory": {
+      "observed_tasks": 120,
+      "p50_seconds": 0.053818000000000005,
+      "p95_seconds_nearest_rank": 0.069295
+    },
+    "V2:planning": {
+      "observed_tasks": 240,
+      "p50_seconds": 1.8710035,
+      "p95_seconds_nearest_rank": 3.271295
+    },
+    "V2:refusal": {
+      "observed_tasks": 120,
+      "p50_seconds": 0.04388,
+      "p95_seconds_nearest_rank": 0.051254
+    },
+    "V2:abnormal": {
+      "observed_tasks": 120,
+      "p50_seconds": 0.41729499999999997,
+      "p95_seconds_nearest_rank": 1.734242
+    },
+    "V2:memory": {
+      "observed_tasks": 120,
+      "p50_seconds": 0.054256,
+      "p95_seconds_nearest_rank": 0.068792
+    }
+  },
+  "real_model_performance_evidence": false
+}

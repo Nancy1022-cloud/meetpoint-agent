@@ -14,10 +14,12 @@ from app.m2_client import MapClient
 from app.m2_models import MapToolError
 from app.m2_tools import MapTools
 from app.m3_baseline import error_reason, finish_planning
-from app.m4_decider import LLMDecider
+from app.m10_decider import M10LLMDecider as LLMDecider  # M10_INTEGRATION_V1
 from app.m4_models import DecisionError
-from app.m5_checkpoint import MemoryPlanner, inspect_checkpoint, saver_for
+from app.m5_checkpoint import inspect_checkpoint, saver_for
+from app.m10_planner import M10Planner as MemoryPlanner  # M10_INTEGRATION_V1
 from app.m5_store import MemoryStore
+from app.m9_evidence import EvidenceTools, web_view  # M9_INTEGRATION_V1
 
 TERMINAL = {"completed", "failed", "cancelled", "superseded"}
 
@@ -195,10 +197,11 @@ class JobManager:
         reason, error, planner, model, attempts, retries = "api_error", None, None, None, 0, 0
         try:
             with self.resources_factory(store, job.request, rid) as (client, decider, tools):
+                observer = EvidenceTools(tools, rid, job.run["constraints_version"])
                 try:
                     store.assert_run_current(user_id, rid)
                     with saver_for(store) as saver:
-                        planner = WebPlanner(tools, job.task, decider, saver,
+                        planner = WebPlanner(observer, job.task, decider, saver,
                             choose_origin=lambda *args: self._choose_origin(job, *args), on_event=job.event)
                         reason, error = planner.run(), planner.error
                 finally:
@@ -224,6 +227,10 @@ class JobManager:
                 finished = finish_planning(store, user_id, rid, reason)
                 if planner is not None:
                     result = planner.summary(finished["stop_reason"])
+                    result["m9_presentation"] = web_view(observer, result, job.task["requirements"], finished["stop_reason"])
+                    if not result["m9_presentation"]["evidence_valid"]:
+                        result["recommendations"] = []
+                        status, error = "failed", {"code": "evidence_validation_failed", "message": "推荐证据未通过校验。"}
                 if error:
                     status = "failed"
             audit = inspect_checkpoint(store, user_id, rid)
